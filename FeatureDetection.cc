@@ -132,6 +132,7 @@ void FeatureDetection::Fit3DSphere(const std::vector<cv::Point3d> &pt_list, doub
         b(i,0) = x*x + y*y + z*z;
     }
     Eigen::VectorXd c = A.bdcSvd(Eigen::ComputeThinU | Eigen::ComputeThinV).solve(b);
+    // Eigen::VectorXd c = A.colPivHouseholderQr().solve(b);
     xc = c[0]/2; yc = c[1]/2; zc = c[2]/2;
     rc = sqrt(c[3]+xc*xc+yc*yc+zc*zc);
 }

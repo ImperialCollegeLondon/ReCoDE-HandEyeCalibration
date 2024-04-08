@@ -13,7 +13,11 @@
 #endif
 
 // EIGEN_DEFINE_STL_VECTOR_SPECIALIZATION(Eigen::Matrix3d);
-
+/**
+ * @brief Get the current working directory
+ * 
+ * @return path to the current working directory
+ */
 std::string GetCurrentWorkingDir(void) 
 {
   char buff[FILENAME_MAX];
@@ -22,7 +26,11 @@ std::string GetCurrentWorkingDir(void)
   return current_working_dir;
 }
 
-int n_frames = 50; // Altogether there were 50 frames collected
+/**
+ * @brief number of frames collected. 50 frames were collected in this demo
+ * 
+ */
+int n_frames = 50;
 
 int main()
 {
@@ -64,10 +72,19 @@ int main()
                   IR_file_path = IR_folder_path + "frame" + std::to_string(count) + ".jpg";
       img_IR = cv::imread(IR_file_path); // Red IR frame first, because we want to create a depth frame of the same resolution as IR frame
       DepthCamera.ReadPointCloudPCD(pcd_file_path, img_IR.rows, img_IR.cols, img_depth, frame_cloud);
+
+      if(count == 0)
+      {
+        cv::imshow("IR frame", img_IR);
+        cv::imshow("Depth frame", img_depth);
+        cv::waitKey(0.0);
+      }
+
       // j4 position reconstruction
       Eigen::Vector3d pos_j4_camera = DepthCamera.ReconstructJ4Position(img_depth, frame_cloud, ball_1_radius, ball_2_radius); // unit (mm)
       pos_j4_camera *= 1e-3; // unit (m)
       Joint4PosList_camera.row(count) = pos_j4_camera;
+      cv::destroyAllWindows();
     }
     Eigen::Matrix4d Trc = SVD_rigid_transform(Joint4PosList_camera, Joint4PosList_robot),
                     Tcr = Trc.inverse();
