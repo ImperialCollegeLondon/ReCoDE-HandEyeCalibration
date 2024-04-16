@@ -94,10 +94,10 @@ class FeatureDetection
          * @brief Detect contours in the black and white image
          * 
          * @param image input black and white image
-         * @param min_area minimum area of the contour to be detected
          * @param contour_img_list vector of output images of infilled detected contours.
+         * @param min_area minimum area of the contour to be detected, 400 by default
          */
-        void ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list);
+        void ContourDetection(const cv::Mat image, std::vector<cv::Mat> &contour_img_list, int min_area = 400);
         /**
          * @brief Find out the 3D position of the centre of a spherical marker
          * 
@@ -118,7 +118,7 @@ class FeatureDetection
          * @param centre_ball_1 output 3D position of the centre of the larger marker in the depth frame, unit (mm)
          * @param centre_ball_2 output 3D position of the centre of the smaller marker in the depth frame, unit (mm)
          */
-        void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, double radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2);
+        void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, const double &radius_ball_1, const double &radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2);
         /**
          * @brief project a 3D point in the depth frame to the RGB image plane
          * 

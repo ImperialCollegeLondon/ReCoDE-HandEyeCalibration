@@ -97,7 +97,7 @@ void FeatureDetection::ReadPointCloudPCD(const std::string &file_path, const int
     // cv::waitKey(0.0);
 }
 
-void FeatureDetection::ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list)
+void FeatureDetection::ContourDetection(const cv::Mat image, std::vector<cv::Mat> &contour_img_list, int min_area)
 {
     contour_img_list.clear();
     std::vector<std::vector<cv::Point>> contours;
@@ -137,14 +137,13 @@ void FeatureDetection::Fit3DSphere(const std::vector<cv::Point3d> &pt_list, doub
     rc = sqrt(c[3]+xc*xc+yc*yc+zc*zc);
 }
 
-void FeatureDetection::FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, double radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2)
+void FeatureDetection::FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, const double &radius_ball_1, const double &radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2)
 {
     // Step 1, find contours
     std::vector<cv::Mat> contour_img_list;
     std::vector<double> radius_list = {radius_ball_1, radius_ball_2}; // unit (mm), r1 > r2
     std::vector<cv::Point3d> ball_centre_list(2);
-    int min_area = 400;
-    this->ContourDetection(img, min_area, contour_img_list);
+    this->ContourDetection(img, contour_img_list);
     assert(contour_img_list.size() >= 2 && "Not enough ball contours detected");
     for(size_t i=0; i<2; i++)
     {

@@ -1,0 +1,5 @@
+n_frames 50
+ball_1_radius 12
+ball_2_radius 10
+l1 0.4318
+l2 0.4162

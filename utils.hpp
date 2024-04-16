@@ -53,6 +53,36 @@ inline void ReadMatrixFromTxt(const std::string path, Eigen::MatrixXd &output)
 }
 
 /**
+ * @brief Read parameters from file
+ * 
+ * @tparam T data type
+ * @param path file path
+ * @param key parameter name
+ * @param value output parameter value
+ */
+template<typename T>
+inline void ReadParameter(const std::string &path, const std::string &key, T &value)
+{
+    std::ifstream file(path); 
+    if(!file) 
+    {
+        std::cout<<"parameter file cannot be found"<<std::endl;
+        return;
+    }
+    std::string key_tmp;
+    T value_tmp;
+    while (file >> key_tmp >> value_tmp)
+    {
+        if(key_tmp == key)
+        {
+          value = value_tmp;
+          break;
+        }
+    }
+    return;
+}
+
+/**
  * @brief Obtain joint 4 position expressed in the robot base frame via Denavit–Hartenberg (DH) transformation matrices 
  * 
  * @param JointAngleList Historical joint angles from the encoder reading.
