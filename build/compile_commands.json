@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/zejian/projects/ReCODE/build",
+  "command": "/usr/bin/g++ -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -isystem /usr/local/include/vtk-8.2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11 -isystem /home/zejian/anaconda3/include/eigen3 -isystem /home/zejian/anaconda3/include/opencv4 -g -march=native -msse4.2 -mfpmath=sse -std=gnu++14 -o CMakeFiles/HandEyeCalib_RECODE.dir/main.cc.o -c /home/zejian/projects/ReCODE/main.cc",
+  "file": "/home/zejian/projects/ReCODE/main.cc"
+},
+{
+  "directory": "/home/zejian/projects/ReCODE/build",
+  "command": "/usr/bin/g++ -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -isystem /usr/local/include/vtk-8.2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11 -isystem /home/zejian/anaconda3/include/eigen3 -isystem /home/zejian/anaconda3/include/opencv4 -g -march=native -msse4.2 -mfpmath=sse -std=gnu++14 -o CMakeFiles/HandEyeCalib_RECODE.dir/utils.cc.o -c /home/zejian/projects/ReCODE/utils.cc",
+  "file": "/home/zejian/projects/ReCODE/utils.cc"
+},
+{
+  "directory": "/home/zejian/projects/ReCODE/build",
+  "command": "/usr/bin/g++ -DDISABLE_LIBUSB_1_0 -DDISABLE_PCAP -DDISABLE_PNG -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -isystem /usr/local/include/vtk-8.2 -isystem /usr/include/eigen3 -isystem /usr/local/include/pcl-1.11 -isystem /home/zejian/anaconda3/include/eigen3 -isystem /home/zejian/anaconda3/include/opencv4 -g -march=native -msse4.2 -mfpmath=sse -std=gnu++14 -o CMakeFiles/HandEyeCalib_RECODE.dir/FeatureDetection.cc.o -c /home/zejian/projects/ReCODE/FeatureDetection.cc",
+  "file": "/home/zejian/projects/ReCODE/FeatureDetection.cc"
+}
+]

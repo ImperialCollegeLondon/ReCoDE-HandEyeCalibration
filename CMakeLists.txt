@@ -3,6 +3,12 @@ project(HandEyeCalib_RECODE VERSION 1.0)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE "Debug")
 
+macro(get_WIN32_WINNT version)
+    if (WIN32 AND CMAKE_SYSTEM_VERSION)
+        add_compile_options(-DWINDOWS)
+    endif()
+endmacro()
+
 find_package(OpenCV REQUIRED)
 find_package (Eigen3 REQUIRED)
 find_package(PCL 1.11 REQUIRED COMPONENTS common io)
