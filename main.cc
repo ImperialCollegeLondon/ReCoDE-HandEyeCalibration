@@ -94,7 +94,7 @@ int main()
     Eigen::Vector3d rcm_pos_robot = Eigen::Vector3d::Zero(),
                     j4_pos_robot,
                     rcm_pos_cam, j4_pos_cam;
-    j4_pos_robot << Joint4PosList_robot(49,0), Joint4PosList_robot(49,1), Joint4PosList_robot(49,2);
+    j4_pos_robot << Joint4PosList_robot(n_frames-1,0), Joint4PosList_robot(n_frames-1,1), Joint4PosList_robot(n_frames-1,2);
     cv::Mat img_colour = cv::imread(RGB_folder_path + "frame49.jpg");
     DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
     DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
