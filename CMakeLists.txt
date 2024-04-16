@@ -8,7 +8,7 @@ find_package (Eigen3 REQUIRED)
 find_package(PCL 1.11 REQUIRED COMPONENTS common io)
 
 set(HeadFiles "utils.hpp" "FeatureDetection.hpp") 
-set(SourceFiles "main.cc" "utils.cc" "FeatureDetection.cc")
+set(SourceFiles "main.cc" "FeatureDetection.cc")
 
 add_executable(${PROJECT_NAME} ${HeadFiles} ${SourceFiles})
 
