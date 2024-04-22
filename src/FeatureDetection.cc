@@ -1,4 +1,4 @@
-#include "FeatureDetection.hpp"
+#include "include/FeatureDetection.hpp"
 
 void FeatureDetection::ReadIntrinsicMatrix(const Eigen::MatrixXd &Intrinsic_mat)
 {
@@ -47,7 +47,7 @@ void FeatureDetection::world2pixel_Acusense(const Eigen::Vector3d &point_3D, Eig
     world2pixel(pt_rgb, pixel_2D);
 }
 
-void FeatureDetection::drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt)
+cv::Mat FeatureDetection::drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt)
 {
     Eigen::Vector3d axis_end = end_pt;
     Eigen::Vector2d origin_2d, end_2d;
@@ -63,6 +63,7 @@ void FeatureDetection::drawShaftAxisColourAcusense(cv::Mat img, std::string wind
     cv::circle(img_copy, end_cv, 3, red, -1);
     cv::imshow(window_name, img_copy);
     cv::waitKey(0);
+    return img_copy;
 }
 
 void FeatureDetection::cvt2cameraFrame(const Eigen::Vector3d &point_robot, Eigen::Vector3d &point_camera)
