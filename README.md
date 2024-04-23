@@ -1,25 +1,20 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Project title
+# Hand-eye Calibration for Medical Robots
 
 <!-- Provide a short description to your project -->
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae pulvinar
-mauris. Praesent sollicitudin rutrum mauris sed congue. Donec vel orci elit.
-Phasellus luctus sodales elementum. Donec lacinia semper lorem, volutpat
-molestie arcu bibendum mollis. Nulla nec massa vitae sapien varius vulputate
-vel vitae ex. Curabitur convallis iaculis elit at faucibus. Sed eget facilisis
-orci, ut consequat neque.
+Hand-eye calibration is a well-studied topic in the field of robotics. Applications that involve the use cameras typically require conducting hand-eye calibration beforehand. This project presents a pipeline for conducting hand-eye calibration using a bespoke marker for a medical robot. The method presented in this project hinges on conducting registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. 
 
 <!-- What should the students going through your exemplar learn -->
 
 ## Learning Outcomes
 
-- Skill 1
-- Skill 2
-- Skill 3
+- Understand what hand-eye calibration is and prevalent school of thoughts in solving this problem.
+- Develop basic skills in writing an object-oriented project in C++.
+- Develop basic skills in using computer vision libraries, such as OpenCV and Point Cloud Library. 
 
 <!-- How long should they spend reading and practising using your Code.
 Provide your best estimate -->
