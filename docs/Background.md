@@ -33,13 +33,13 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 
 ## References
 <a id="1">[1]</a> 
-Shiu, Y.C. and Ahmad, S., 1987. Calibration of wrist-mounted robotic sensors by solving homogeneous transform equations of the form AX= XB.
+Shiu, Y.C. and Ahmad, S., 1987. Calibration of wrist-mounted robotic sensors by solving homogeneous transform equations of the form AX= XB.<br />
 <a id="2">[2]</a> 
-Shah, M., Eastman, R.D. and Hong, T., 2012, March. An overview of robot-sensor calibration methods for evaluation of perception systems. In Proceedings of the Workshop on Performance Metrics for Intelligent Systems (pp. 15-20).
+Shah, M., Eastman, R.D. and Hong, T., 2012, March. An overview of robot-sensor calibration methods for evaluation of perception systems. In Proceedings of the Workshop on Performance Metrics for Intelligent Systems (pp. 15-20). <br /> 
 <a id="3">[3]</a> 
-Arun, K.S., Huang, T.S. and Blostein, S.D., 1987. Least-squares fitting of two 3-D point sets. IEEE Transactions on pattern analysis and machine intelligence, (5), pp.698-700.
+Arun, K.S., Huang, T.S. and Blostein, S.D., 1987. Least-squares fitting of two 3-D point sets. IEEE Transactions on pattern analysis and machine intelligence, (5), pp.698-700. <br />
 <a id="4">[4]</a> 
-[https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters)
+[https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters) <br />
 
 
 
