@@ -15,13 +15,13 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 
 ## Experimental setup
 - The first-generation da Vinci Research Kit (dVRK)
-    - Overview
+    - Overview<br />
     The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic da Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown as below.
     
-    - Instrument (Long Needle Driver)
+    - Instrument (Long Needle Driver)<br />
     We use joint 4 position on the instrument as the reference point for point set registration.
     
-    - DH parameters
+    - DH parameters<br />
     The DH parameter table is listed below:
     
         | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
@@ -39,15 +39,15 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     $$j_{4x}=L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2)$$
 
     $$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
-    
+
     $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
-- Acusense camera
+- Acusense camera<br />
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
     - RGB lens
     Colour frames are captured by the RGB lens, with a resolution of ****. Intrinsic matrix K_rgb
     - Depth lens
     Depth frames are captured by the Depth lens, with a resolution of ***, Intrinsic matrix K_depth
-- Bespoke markers
+- Bespoke markers<br />
   Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic red markers}$$. 
 
 
