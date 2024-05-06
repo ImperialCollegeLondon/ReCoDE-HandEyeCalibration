@@ -36,7 +36,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     $$T_{04}=T_{01}T_{12}T_{23}T_{34}$$
 
     And joint 4 position in the base frame is 
-    $$[L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2),-L_2*sin(q_2)+(L_1-q_3)*sin(q_2),-L_2*cos(q_1)*cos(q_2)+(L_1-q_3)*cos(q_1)*cos(q_2)]$$
+    $$[L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2),1,2]$$
 - Acusense camera
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
     - RGB lens
