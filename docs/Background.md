@@ -29,14 +29,14 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
         | 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
         | 2 | 0 | $\frac{\pi}{2}$ | 0 | $q_2$ - $\frac{\pi}{2}$ |
         | 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
-        | 4 | 0 | 0 | $L_{tool}$ | $q_4$ |
+        | 4 | 0 | 0 | $L_2$ | $q_4$ |
         | ... | ... | ... | ... | ... |
-    where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_{tool}$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
+    where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_2$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
 
     $$T_{04}=T_{01}T_{12}T_{23}T_{34}=$$
 
     And joint 4 position in the base frame is 
-    $$[1,2,3]$
+    $$[L_2*sin(q_1)*cos(q_2) - (L_1 - q_3)*sin(q_1)*cos(q_2),2,3]$$
 - Acusense camera
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
     - RGB lens
