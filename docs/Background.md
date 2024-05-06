@@ -20,6 +20,16 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     - DH parameters
     The DH parameter table is listed below:
 
+    .center[
+
+    | Tables        | Are           | Cool  |
+    | ------------- |:-------------:| -----:|
+    | col 3 is      | right-aligned | $1600 |
+    | col 2 is      | centered      |   $12 |
+    | zebra stripes | are neat      |    $1 |
+
+    ]
+
     | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
     | -------------   | ------------- | ------------- | ------------- |------------- |
     | 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
