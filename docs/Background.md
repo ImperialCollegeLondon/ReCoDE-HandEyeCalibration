@@ -35,7 +35,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 
 
     T<sub>04</sub>=T<sub>01</sub>T<sub>12</sub>T<sub>23</sub>T<sub>34</sub>
-
+    $$T_{04}=T_{01}T_{12}T_{23}T_{34}$$
 
     $T_{04}=T_{01}T_{12}T_{23}T_{34}$ = [$ -sin(q_1)sin(q_2)cos(q_4)-sin(q_4)cos(q_1) $, $sin(q_1)sin(q_2)sin(q_4)-cos(q_1)cos(q_4)$, $sin(q_1)cos(q_2)$]
 =\begin{bmatrix}-sin(q_1)sin(q_2)cos(q_4)-sin(q_4)cos(q_1) & sin(q_1)sin(q_2)sin(q_4)-cos(q_1)cos(q_4) & sin(q_1)cos(q_2)-(L_1-q_3)sin(q_1)cos(q_2) \\ a & b & c & d \\ 0 & 0 & 0 &1 \end{bmatrix}
