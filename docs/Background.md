@@ -16,8 +16,8 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 ## Experimental setup
 - The first-generation da Vinci Research Kit (dVRK)
     - Overview<br />
-    The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic da Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown as below.
-    
+    The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic da Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below.
+    $${\color{red}Pic joint frames}$$
     - Instrument (Long Needle Driver)<br />
     We use joint 4 position on the instrument as the reference point for point set registration.
     
@@ -41,6 +41,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     $$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
 
     $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
+    
 - Acusense camera<br />
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
     - RGB lens
