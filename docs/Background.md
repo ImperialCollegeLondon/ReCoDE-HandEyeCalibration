@@ -33,11 +33,9 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
         | ... | ... | ... | ... | ... |
     where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_{tool}$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
     
-    $$ 
-    {T_{04}=T_{01}T_{12}T_{23}T_{34} =
-     \left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack} *
-     \left\lbrack \matrix{1 & 0 \cr 0 & 1} \right\rbrack =
-     \left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack
+    $$ {\left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack} 
+    * \left\lbrack \matrix{1 & 0 \cr 0 & 1} \right\rbrack
+    = \left\lbrack \matrix{2 & 3 \cr 4 & 5} \right\rbrack
     $$
 
     ```math
