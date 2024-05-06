@@ -19,19 +19,8 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic da Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown as below.
     - DH parameters
     The DH parameter table is listed below:
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML-full"></script> <script type="text/x-mathjax-config"> MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts:["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk:(MathJax.Hub.Browser.isMobile ? 10 : 50) }, tex2jax: { inlineMath: [ ["$", "$"], ["\\\\(","\\\\)"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" }, TeX: { noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } }, messageStyle: "none" });   </script>
-    $$
-    \begin{array}{|c|c|c|c|c|}
-    \hline
-    \textbf{Joint frame} & \textbf{a} & \textbf{\alpha} & \textbf{d} & \textbf{\theta} \\ 
-    \hline
-    \text{1} & \text{0} & \text{Column1} & \text{\frac{\pi}{2}} & \text{0} & \text{q_1+\frac{\pi}{2}} \\
-    \hline
-    \end{array}
-    $$
-    
-    <div align="center">
+  
+    <table align="center">
     | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
     | -------------   | ------------- | ------------- | ------------- |------------- |
     | :---:           |     :---:     |      :---:    |:---:          |:---:         |
@@ -39,7 +28,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     | 2 | 0 | -$\frac{\pi}{2}$ | 0 | $q_2$ - $\frac{\pi}{2}$ |
     | 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
     | 4 | 0 | 0 | $L_{tool}$ | $q_4$ |
-    </div>
+    </table>  
 
     - Instrument (Long Needle Driver)
     We use joint 4 position on the instrument as the reference point for point set registration.
