@@ -33,6 +33,10 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
         | ... | ... | ... | ... | ... |
     where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_{tool}$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
 
+
+    T<sub>04</sub>=T<sub>01</sub>T<sub>12</sub>T<sub>23</sub>T<sub>34</sub>
+
+
     $T_{04}=T_{01}T_{12}T_{23}T_{34}$ = [$ -sin(q_1)sin(q_2)cos(q_4)-sin(q_4)cos(q_1) $, $sin(q_1)sin(q_2)sin(q_4)-cos(q_1)cos(q_4)$, $sin(q_1)cos(q_2)$]
 =\begin{bmatrix}-sin(q_1)sin(q_2)cos(q_4)-sin(q_4)cos(q_1) & sin(q_1)sin(q_2)sin(q_4)-cos(q_1)cos(q_4) & sin(q_1)cos(q_2)-(L_1-q_3)sin(q_1)cos(q_2) \\ a & b & c & d \\ 0 & 0 & 0 &1 \end{bmatrix}
 - Acusense camera
