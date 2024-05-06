@@ -20,7 +20,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     - DH parameters
     The DH parameter table is listed below:
     
-    <center> </center>
+    <center> 
     | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
     | -------------   | ------------- | ------------- | ------------- |------------- |
     | 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
@@ -28,6 +28,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     | 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
     | 4 | 0 | 0 | $L_{tool}$ | $q_4$ |
     | ... | ... | ... | ... | ... |
+    </center>
 
     - Instrument (Long Needle Driver)
     We use joint 4 position on the instrument as the reference point for point set registration.
