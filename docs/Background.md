@@ -49,7 +49,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     - Depth lens
     Depth frames are captured by the Depth lens, with a resolution of ***, Intrinsic matrix K_depth
 - Bespoke markers<br />
-  Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red_markers}$$. 
+  Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red-markers}$$. 
 
 
 ## References
