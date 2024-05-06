@@ -17,6 +17,10 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 - The first-generation da Vinci Research Kit (dVRK)
     - Overview
     The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic da Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown as below.
+    
+    - Instrument (Long Needle Driver)
+    We use joint 4 position on the instrument as the reference point for point set registration.
+    
     - DH parameters
     The DH parameter table is listed below:
     
@@ -27,9 +31,8 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
         | 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
         | 4 | 0 | 0 | $L_{tool}$ | $q_4$ |
         | ... | ... | ... | ... | ... |
+    where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_{tool}$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration.
 
-    - Instrument (Long Needle Driver)
-    We use joint 4 position on the instrument as the reference point for point set registration.
 - Acusense camera
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
     - RGB lens
