@@ -43,7 +43,7 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
 
 - Acusense camera<br />
-  The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames.
+  The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
     - RGB lens
     Colour frames are captured by the RGB lens, with a resolution of ****. Intrinsic matrix K_rgb
     - Depth lens
