@@ -79,7 +79,7 @@ Solutions to the above can be found in `solutions`.
 -->
 
 ## Getting Started
-Background knowledge on robotics and computer vision can be referred to `Background.d`. The workflow of this project can be referred to `Code_Overview.md`. `EigenLibraryIntro.md`, `OpenCVLibraryIntro.md` and `PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `input.md` provides information of input files used in this project. 
+Background knowledge on robotics and computer vision can be referred to `Background.md`. The workflow of this project can be referred to `Code_Overview.md`. `EigenLibraryIntro.md`, `OpenCVLibraryIntro.md` and `PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `input.md` provides information of input files used in this project. 
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
