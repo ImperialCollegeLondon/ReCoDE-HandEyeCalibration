@@ -68,6 +68,12 @@ Then we stack them into a `n_frames`$\times 3$ matrix `Joint4PosList_camera`, wh
     Joint4PosList_camera.row(count) = pos_j4_camera;
 ```
 ## Step 4: Registration with given correspondences
+After obtaining `Joint4PosList_camera` and `Joint4PosList_robot`, we can calculate the transformation matrix `Trc` from the camera to the robot frame, and its inverse `Tcr` through the SVD algorithm. 
+```
+    Eigen::Matrix4d Trc = SVD_rigid_transform(Joint4PosList_camera, Joint4PosList_robot),
+                    Tcr = Trc.inverse();
+```
+This is because each row of `Joint4PosList_camera` and `Joint4PosList_robot` correspond to the same point (joint 4), although expressed in different frames.
 
 ## Output files
 
