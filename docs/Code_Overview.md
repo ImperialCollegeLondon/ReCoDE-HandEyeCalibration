@@ -58,7 +58,7 @@ We can leverage the `DepthCamera` object to process the image data and return jo
     Eigen::Vector3d pos_j4_camera = DepthCamera.ReconstructJ4Position(img_depth, frame_cloud, ball_1_radius, ball_2_radius); // unit (mm)
     pos_j4_camera *= 1e-3; // unit (m)
 ```
-Then we stack them into a matrix `Joint4PosList_camera`
+Then we stack them into a $n_frames \cross 3$ matrix `Joint4PosList_camera`, which is of the same shape as `Joint4PosList_robot`.
 ```
     Joint4PosList_camera.row(count) = pos_j4_camera;
 ```
