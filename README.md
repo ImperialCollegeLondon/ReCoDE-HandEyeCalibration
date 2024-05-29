@@ -36,7 +36,10 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
 -->
 
 ### Academic
-
+- Basic knowledge on robotics (eg. Denavit–Hartenberg (DH) parameters, forward kinematics)
+- Hand-eye calibration and fundamental knowledge on computer vision (eg. camera intrinsic matrix, extrinsic matrix, image projection)
+- Linear algebra (eg. Singular Value Decomposition (SVD))
+Detailed information can be referred to `Background.md`
 <!-- List the system requirements and how to obtain them, that can be as simple
 as adding a hyperlink to as detailed as writting step-by-step instructions.
 How detailed the instructions should be will vary on a case-by-case basis.
@@ -53,7 +56,10 @@ Here are some examples:
 -->
 
 ### System
-
+- A C++ toolchain along with the necessary development libraries:
+    - Eigen library (Eigen 3)
+    - OpenCV library (OpenCV 4.6)
+    - Point cloud library (PCL 1.11)
 <!-- Instructions on how the student should start going through the exemplar.
 
 Structure this section as you see fit but try to be clear, concise and accurate
@@ -73,7 +79,7 @@ Solutions to the above can be found in `solutions`.
 -->
 
 ## Getting Started
-
+Background knowledge on robotics and computer vision can be referred to `Background.d`. The workflow of this project can be referred to `Code_Overview.md`. `EigenLibraryIntro.md`, `OpenCVLibraryIntro.md` and `PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `input.md` provides information of input files used in this project. 
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
@@ -90,18 +96,29 @@ in a tree node.
 
 ```log
 .
-├── examples
-│   ├── ex1
-│   └── ex2
+├── input
+│   ├── IR
+│   ├── RGB
+│   ├── pcd
+│   ├── Acusense_RGB_K.txt
+│   ├── ExtrinsicMat.txt
+│   ├── q_history.txt
+│   ├── pos_act.txt
+│   └── pos_des.txt
+├── output
 ├── src
-|   ├── file1.py
-|   ├── file2.cpp
-|   ├── ...
-│   └── data
-├── app
+│   ├── main.cc
+│   ├── FeatureDetection.cc
+│   └── utils.cc
+├── include
+│   ├── FeatureDetection.hpp
+│   └── utils.hpp
+├── CMakeLists.txt 
 ├── docs
-├── main
-└── test
+├── notebooks
+├── README.md
+├── LICENSE.md
+└── requirements.txt 
 ```
 
 <!-- Change this to your License. Make sure you have added the file on GitHub -->
