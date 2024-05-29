@@ -76,5 +76,20 @@ After obtaining `Joint4PosList_camera` and `Joint4PosList_robot`, we can calcula
 This is because each row of `Joint4PosList_camera` and `Joint4PosList_robot` correspond to the same point (joint 4), although expressed in different frames.
 
 ## Output files
-
+To qualitatively verify our calculation for Tcr`, we can back project the 3D tool axis onto the image plane and compare it with visual observations. The last captured colour frame is used for tool axis overlay. The tool axis can be defined using two points on the line. In this project, we use the remote centre of motion point (RCM, which is the origin of the robot frame) and joint 4.
+```
+    DepthCamera.ReadHandEyeTransform(Tcr);
+    Eigen::Vector3d rcm_pos_robot = Eigen::Vector3d::Zero(),
+                    j4_pos_robot,
+                    rcm_pos_cam, j4_pos_cam;
+```
+Through `Tcr`, we convert the position of RCM and joint 4 to the camera frame.
+```
+    DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
+    DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
+```
+Finally, we can draw the tool axis using `rcm_pos_cam` and `j4_pos_cam`.
+```
+    DepthCamera.drawShaftAxisColourAcusense(img_colour, "overlay", rcm_pos_cam, j4_pos_cam);
+```
 
