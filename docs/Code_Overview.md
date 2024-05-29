@@ -11,7 +11,9 @@ The `src` directory comprises one `main.cc` and two other *.cc files which conta
 Eigen library, OpenCV, and Point Cloud library are used in this project.
 
 ## Step 1: Reading Input, class initialisation
-During data collection, the robot was moved to `n_frames` different positions, and at each position, the camera captured the pose of the markers. The collected historical joint angles are read in as `JointAngleList`, and joint 4 positions can be then calculated using forward kinematics and stored as `Joint4PosList_robot`.
+During data collection, the robot was moved to `n_frames` different positions, and at each position, the camera captured the pose of the markers. The input folder is found by using the command `GetCurrentWorkingDir()+/../input/`.
+
+The collected historical joint angles are read in as `JointAngleList`, and joint 4 positions can be then calculated using forward kinematics and stored as `Joint4PosList_robot`.
 ```
     std::string JointAnglePath = GetCurrentWorkingDir() + "/../q_history.txt";
     Eigen::MatrixXd JointAngleList, Joint4PosList_robot;
