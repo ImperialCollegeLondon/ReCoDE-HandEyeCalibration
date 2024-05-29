@@ -5,19 +5,25 @@
 <!-- Provide a short description to your project -->
 
 ## Files
-The `src` directory comprises one `main.cc` and two other *.cc files which contain essential classes and utility functions. The `include` folder contains their corresponding header files (`*.h`). 
+The `src` directory comprises one `main.cc` and two other `*.cc` files which contain essential classes and utility functions. The `include` folder contains their corresponding header files (`*.h`). 
 
 ## Dependencies
 Eigen library, OpenCV, and Point Cloud library are used in this project.
 
 ## Step 1: Reading Input, class initialisation
 - 
+1. Input files
+...During data collection, the robot was moved to `n_frames` different positions, and at each position, the camera captured the pose of the markers. Altogether there are 50 frames collected for calculating the hand-eye transfomration matrix.
+...We read input files from the input folder. The collected historic robot angles are read in as `JointAngleList`, and joint 4 positions are calculated via forward kinematics and stored as `Joint4PosList_robot`
 ```
     std::string JointAnglePath = GetCurrentWorkingDir() + "/../q_history.txt";
     Eigen::MatrixXd JointAngleList, Joint4PosList_robot;
     ReadMatrixFromTxt(JointAnglePath, JointAngleList);
     GetJoint4Position(JointAngleList, Joint4PosList_robot); // from Denavit–Hartenberg matrix
-    std::string Intrinsic_path = GetCurrentWorkingDir() + "/../Acusense_RGB_K.txt", 
+```
+...The intrinsic and extrinsic camera parameters are stored as `Intrinsic_matrix` and `Extrinsic_matrix`, respectively. Input image data include coloured frames, infrared frames and point clouds. After reading these input files, we can initialise a camera object `DepthCamera` for processing image data. 
+```
+   std::string Intrinsic_path = GetCurrentWorkingDir() + "/../Acusense_RGB_K.txt", 
                 Extrinsic_path = GetCurrentWorkingDir() + "/../ExtrinsicMat.txt",
                 RGB_folder_path = GetCurrentWorkingDir() + "/../RGB/",
                 IR_folder_path = GetCurrentWorkingDir() + "/../IR/",
