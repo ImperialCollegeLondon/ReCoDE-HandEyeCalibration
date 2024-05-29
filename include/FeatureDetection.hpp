@@ -76,7 +76,7 @@ class FeatureDetection
          * @param origin 3D position of the starting point on the tool shaft, expressed in the depth frame
          * @param end_pt 3D position of the ending point on the tool shaft, expressed in the depth frame
          */
-        void drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt);
+        cv::Mat drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt);
         /**
          * @brief convert a 3D point the robot base frame to the depth frame
          * 
