@@ -11,7 +11,6 @@ The `src` directory comprises one `main.cc` and two other *.cc files which conta
 Eigen library, OpenCV, and Point Cloud library are used in this project.
 
 ## Step 1: Reading Input, class initialisation
-- 
 During data collection, the robot was moved to `n_frames` different positions, and at each position, the camera captured the pose of the markers. The collected historical joint angles are read in as `JointAngleList`, and joint 4 positions can be then calculated using forward kinematics and stored as `Joint4PosList_robot`.
 ```
     std::string JointAnglePath = GetCurrentWorkingDir() + "/../q_history.txt";
@@ -19,6 +18,7 @@ During data collection, the robot was moved to `n_frames` different positions, a
     ReadMatrixFromTxt(JointAnglePath, JointAngleList);
     GetJoint4Position(JointAngleList, Joint4PosList_robot); // from Denavit–Hartenberg matrix
 ```
+Input image data include the collected colour frames, infrared frames and point clouds. The intrinsic and extrinsic parameters of the camera are stored as `Intrinsic_matrix` and `Extrinsic_matrix`, respectively.
 ```
     std::string Intrinsic_path = GetCurrentWorkingDir() + "/../Acusense_RGB_K.txt", 
                 Extrinsic_path = GetCurrentWorkingDir() + "/../ExtrinsicMat.txt",
@@ -28,7 +28,9 @@ During data collection, the robot was moved to `n_frames` different positions, a
     Eigen::MatrixXd Intrinsic_matrix, Extrinsic_matrix;
     ReadMatrixFromTxt(Intrinsic_path, Intrinsic_matrix);
     ReadMatrixFromTxt(Extrinsic_path, Extrinsic_matrix);
-
+```
+After reading these input data, we can then initialise a camera object `DepthCamera` for image processing.
+```
     FeatureDetection DepthCamera;
     DepthCamera.ReadIntrinsicMatrix(Intrinsic_matrix);
     DepthCamera.ReadAcusenseDepth2RGBMat(Extrinsic_matrix);
