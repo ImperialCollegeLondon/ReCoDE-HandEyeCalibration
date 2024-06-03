@@ -1,3 +1,0 @@
-/home/zejian/projects/ReCODE/build/CMakeFiles/HandEyeCalib_RECODE.dir
-/home/zejian/projects/ReCODE/build/CMakeFiles/edit_cache.dir
-/home/zejian/projects/ReCODE/build/CMakeFiles/rebuild_cache.dir
