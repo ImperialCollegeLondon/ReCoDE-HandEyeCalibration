@@ -1,25 +1,20 @@
 <!-- Your Project title, make it sound catchy! -->
 
-# Project title
+# Hand-eye Calibration for Medical Robots
 
 <!-- Provide a short description to your project -->
 
 ## Description
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae pulvinar
-mauris. Praesent sollicitudin rutrum mauris sed congue. Donec vel orci elit.
-Phasellus luctus sodales elementum. Donec lacinia semper lorem, volutpat
-molestie arcu bibendum mollis. Nulla nec massa vitae sapien varius vulputate
-vel vitae ex. Curabitur convallis iaculis elit at faucibus. Sed eget facilisis
-orci, ut consequat neque.
+Hand-eye calibration is a well-studied topic in the field of robotics. Applications that involve the use cameras typically require conducting hand-eye calibration beforehand. This project presents a pipeline for conducting hand-eye calibration using a bespoke marker for a medical robot. The method presented in this project hinges on conducting registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. 
 
 <!-- What should the students going through your exemplar learn -->
 
 ## Learning Outcomes
 
-- Skill 1
-- Skill 2
-- Skill 3
+- Understand what hand-eye calibration is and prevalent school of thoughts in solving this problem.
+- Develop basic skills in writing an object-oriented project in C++.
+- Develop basic skills in using computer vision libraries, such as OpenCV and Point Cloud Library. 
 
 <!-- How long should they spend reading and practising using your Code.
 Provide your best estimate -->
@@ -41,7 +36,10 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
 -->
 
 ### Academic
-
+- Basic knowledge on robotics (eg. Denavit–Hartenberg (DH) parameters, forward kinematics)
+- Hand-eye calibration and fundamental knowledge on computer vision (eg. camera intrinsic matrix, extrinsic matrix, image projection)
+- Linear algebra (eg. Singular Value Decomposition (SVD))
+Detailed information can be referred to `Background.md`
 <!-- List the system requirements and how to obtain them, that can be as simple
 as adding a hyperlink to as detailed as writting step-by-step instructions.
 How detailed the instructions should be will vary on a case-by-case basis.
@@ -58,7 +56,10 @@ Here are some examples:
 -->
 
 ### System
-
+- A C++ toolchain along with the necessary development libraries:
+    - Eigen library (Eigen 3)
+    - OpenCV library (OpenCV 4.6)
+    - Point cloud library (PCL 1.11)
 <!-- Instructions on how the student should start going through the exemplar.
 
 Structure this section as you see fit but try to be clear, concise and accurate
@@ -78,7 +79,7 @@ Solutions to the above can be found in `solutions`.
 -->
 
 ## Getting Started
-
+Background knowledge on robotics and computer vision can be referred to `Background.md`. The workflow of this project can be referred to `Code_Overview.md`. `EigenLibraryIntro.md`, `OpenCVLibraryIntro.md` and `PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `input.md` provides information of input files used in this project. 
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
@@ -95,18 +96,29 @@ in a tree node.
 
 ```log
 .
-├── examples
-│   ├── ex1
-│   └── ex2
+├── input
+│   ├── IR
+│   ├── RGB
+│   ├── pcd
+│   ├── Acusense_RGB_K.txt
+│   ├── ExtrinsicMat.txt
+│   ├── q_history.txt
+│   ├── pos_act.txt
+│   └── pos_des.txt
+├── output
 ├── src
-|   ├── file1.py
-|   ├── file2.cpp
-|   ├── ...
-│   └── data
-├── app
+│   ├── main.cc
+│   ├── FeatureDetection.cc
+│   └── utils.cc
+├── include
+│   ├── FeatureDetection.hpp
+│   └── utils.hpp
+├── CMakeLists.txt 
 ├── docs
-├── main
-└── test
+├── notebooks
+├── README.md
+├── LICENSE.md
+└── requirements.txt 
 ```
 
 <!-- Change this to your License. Make sure you have added the file on GitHub -->

@@ -30,7 +30,6 @@ std::string GetCurrentWorkingDir(void)
  * @brief number of frames collected. 50 frames were collected in this demo
  * 
  */
-int n_frames = 50;
 
 int main()
 {
@@ -61,6 +60,7 @@ int main()
 
     // Iterate over each collected frame
     int count = 0;
+    int n_frames = 50;
     double ball_1_radius = 12.0, ball_2_radius = 10.0; // unit (mm)
     Eigen::MatrixXd Joint4PosList_camera(n_frames, 3); // unit (m)
     for(count; count < n_frames; count++)
