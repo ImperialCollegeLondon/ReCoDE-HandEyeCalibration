@@ -30,7 +30,6 @@ std::string GetCurrentWorkingDir(void)
  * @brief number of frames collected. 50 frames were collected in this demo
  * 
  */
-int n_frames = 50;
 
 int main()
 {
@@ -38,10 +37,20 @@ int main()
      * @brief Step 1. read joint angles and calculate j4 positions in the robot frame
      * 
      */
-    std::string JointAnglePath = GetCurrentWorkingDir() + "/../input/q_history.txt";
+    std::string JointAnglePath = GetCurrentWorkingDir() + "/../input/q_history.txt",
+                ParameterPath = GetCurrentWorkingDir() + "/../input/parameters.txt";
+    int n_frames;
+    double ball_1_radius, ball_2_radius; // unit (mm)
+    double l1, l2; // unit (m)
+    ReadParameter(ParameterPath, "n_frames", n_frames);
+    ReadParameter(ParameterPath, "ball_1_radius", ball_1_radius);
+    ReadParameter(ParameterPath, "ball_2_radius", ball_2_radius);
+    ReadParameter(ParameterPath, "l1", l1);
+    ReadParameter(ParameterPath, "l2", l2);
+
     Eigen::MatrixXd JointAngleList, Joint4PosList_robot;
     ReadMatrixFromTxt(JointAnglePath, JointAngleList);
-    GetJoint4Position(JointAngleList, Joint4PosList_robot); // from Denavit–Hartenberg matrix
+    GetJoint4Position(JointAngleList, Joint4PosList_robot, l1, l2); // from Denavit–Hartenberg matrix
     /**
      * @brief Step 2, recover j4 positions in the camera frame using computer vision techniques
      * 
@@ -62,8 +71,6 @@ int main()
 
     // Iterate over each collected frame
     int count = 0;
-    int n_frames = 50;
-    double ball_1_radius = 12.0, ball_2_radius = 10.0; // unit (mm)
     Eigen::MatrixXd Joint4PosList_camera(n_frames, 3); // unit (m)
     for(count; count < n_frames; count++)
     {

@@ -25,6 +25,37 @@ void ReadMatrixFromTxt(const std::string path, Eigen::MatrixXd &output);
  * @param l1 built-in parameter l1
  * @param l2 built-in parameter l2
  */
+
+/**
+ * @brief Read parameters from file
+ * 
+ * @tparam T data type
+ * @param path file path
+ * @param key parameter name
+ * @param value output parameter value
+ */
+template<typename T>
+inline void ReadParameter(const std::string &path, const std::string &key, T &value)
+{
+    std::ifstream file(path); 
+    if(!file) 
+    {
+        std::cout<<"parameter file cannot be found"<<std::endl;
+        return;
+    }
+    std::string key_tmp;
+    T value_tmp;
+    while (file >> key_tmp >> value_tmp)
+    {
+        if(key_tmp == key)
+        {
+          value = value_tmp;
+          break;
+        }
+    }
+    return;
+}
+
 void GetJoint4Position(const Eigen::MatrixXd &JointAngleList, Eigen::MatrixXd &J4PositionList, double l1=0.4318, double l2=0.4162);
 
 // Decompose a random matrix A into A = USV'
