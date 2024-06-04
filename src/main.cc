@@ -62,6 +62,7 @@ int main()
 
     // Iterate over each collected frame
     int count = 0;
+    int n_frames = 50;
     double ball_1_radius = 12.0, ball_2_radius = 10.0; // unit (mm)
     Eigen::MatrixXd Joint4PosList_camera(n_frames, 3); // unit (m)
     for(count; count < n_frames; count++)
@@ -95,13 +96,11 @@ int main()
     Eigen::Vector3d rcm_pos_robot = Eigen::Vector3d::Zero(),
                     j4_pos_robot,
                     rcm_pos_cam, j4_pos_cam;
-    j4_pos_robot << Joint4PosList_robot(49,0), Joint4PosList_robot(49,1), Joint4PosList_robot(49,2);
+    j4_pos_robot << Joint4PosList_robot(n_frames-1,0), Joint4PosList_robot(n_frames-1,1), Joint4PosList_robot(n_frames-1,2);
     cv::Mat img_colour = cv::imread(RGB_folder_path + "frame49.jpg");
     DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
     DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
-    cv::Mat img_overlay = DepthCamera.drawShaftAxisColourAcusense(img_colour, "overlay", rcm_pos_cam, j4_pos_cam);
-    std::string img_overlay_filename = output_folder_path + "overlay.jpg";
-    cv::imwrite(img_overlay_filename, img_overlay);
+    DepthCamera.drawShaftAxisColourAcusense(img_colour, "overlay", rcm_pos_cam, j4_pos_cam);
     // SVD to find out Hand-eye transformation matrix
     std::cout<<Trc<<std::endl;
     return 1.0;
