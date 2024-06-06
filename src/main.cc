@@ -104,7 +104,8 @@ int main()
                     j4_pos_robot,
                     rcm_pos_cam, j4_pos_cam;
     j4_pos_robot << Joint4PosList_robot(n_frames-1,0), Joint4PosList_robot(n_frames-1,1), Joint4PosList_robot(n_frames-1,2);
-    cv::Mat img_colour = cv::imread(RGB_folder_path + "frame49.jpg");
+    std::string output_img_name = "frame" + std::to_string(n_frames-1) + ".jpg";
+    cv::Mat img_colour = cv::imread(RGB_folder_path + output_img_name);
     DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
     DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
 
