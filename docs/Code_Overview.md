@@ -11,8 +11,8 @@ The `src` directory comprises one `main.cc` and two other *.cc files which conta
 Eigen library, OpenCV, and Point Cloud library are used in this project.
 
 ## Step 1: Reading Input, class initialisation
-- 
-```
+
+```cpp
     std::string JointAnglePath = GetCurrentWorkingDir() + "/../q_history.txt";
     Eigen::MatrixXd JointAngleList, Joint4PosList_robot;
     ReadMatrixFromTxt(JointAnglePath, JointAngleList);
@@ -30,6 +30,7 @@ Eigen library, OpenCV, and Point Cloud library are used in this project.
     DepthCamera.ReadIntrinsicMatrix(Intrinsic_matrix);
     DepthCamera.ReadAcusenseDepth2RGBMat(Extrinsic_matrix);
 ```
+
 ## Step 2: Find out positions in the robot frame
 
 ## Step 3: Find out positions in the camera frame
