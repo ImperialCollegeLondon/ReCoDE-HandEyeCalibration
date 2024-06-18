@@ -2,36 +2,44 @@
 This markdown file provides a detailed description of the functions declared within class ```FeatureDetection```, an object that encapsulates computer vision algorithms used in this project.
 
 ## Private variables & functions
-* K_int
-it represents the intrinsic matrix for the RGB lens of the camera
-* fx, fy, cx, cy 
-Intrinsic camera parameters that comprise K_int.
+1.  **K_int** <br />
+    it represents the intrinsic matrix for the RGB lens of the camera
+2.  **fx, fy, cx, cy** <br />
+    Intrinsic camera parameters that comprise K_int.
 
-* Tcr, Trc
-$4 \times 4$ homogenous transformation matrices between the camera and robot frame. 
+3.  **Tcr, Trc** <br />
+    $4 \times 4$ homogenous transformation matrices between the camera and robot frame. 
 
-* Lbb
-It represents the distance between the centre of two spherical markers when they are placed on the tool shaft. The value is 0.050 (m) by default
+4.  **Lbb** <br />
+    It represents the distance between the centre of two spherical markers when they are placed on the tool shaft. The value is 0.050 (m) by default
 
-* Lbp
-It represents the distance between the centre of the smaller marker ball and joint 4 when it is places on the tool shaft. The value is 0.017 (m) by default.
+5.  **Lbp** <br />
+    It represents the distance between the centre of the smaller marker ball and joint 4 when it is places on the tool shaft. The value is 0.017 (m) by default.
 
-* T_depth2RGB_Acusense
-The extrinsic matrix that transforms the depth frame to the colour frame of the Acusense camera.
+6.  **T_depth2RGB_Acusense** <br />
+    The extrinsic matrix that transforms the depth frame to the colour frame of the Acusense camera.
 
-* ContourDetection
-```
-void ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list)
-```
-This function reads input image and detect circular contours, the size of which is larger than ```min_area```. Output ```contour_img_list``` is a vector of images overlaid with detected circular contours, in the descending order of contour areas. 
+7.  **ContourDetection**
+
+ ```cpp
+ void ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list)
+ ```
+
+This function reads input image and detect circular contours, the size of which is larger than ```min_area```. Output ```contour_img_list``` is a vector of images overlaid with detected  circular contours, in the descending order of contour areas. 
+<p align="center">
+  <img src="../Pics_for_demo/Init_IR_frame.png" width="500px" alt="Init_IR" title="Init_IR"/>
+  <img src="../Pics_for_demo/Init_depth_frame.png" width="500px" alt="Init_depth" title="Init_depth"/>
+</p>
 
 First, we leverage the built-in OpenCV function ```cv::findContours``` to detect all circular contours in the image.
+   
 ```cpp
     contour_img_list.clear();
     std::vector<std::vector<cv::Point>> contours;
     std::vector<cv::Vec4i> hierarchy;
     cv::findContours(image, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 ```
+
 Then we rearrange the detected contours in an descending order
 ```cpp
     std::sort(contours.begin(), contours.end(),[](const std::vector<cv::Point>& c1, const std::vector<cv::Point>& c2)
@@ -50,7 +58,14 @@ Finally, we manually overlay these detected contours on the original image.
         }
     }
 ```
-* Fit3DSphere
+
+<p align="center">
+  <img src="../Pics_for_demo/find_contours0.png" width="500px" alt="contour0" title="contour0"/>
+  <img src="../Pics_for_demo/find_contours1.png" width="500px" alt="contour1" title="contour1"/>
+</p>
+
+
+8. **Fit3DSphere** <br />
 ```cpp
 void Fit3DSphere(const std::vector<cv::Point3d> &pt_list, double &xc, double &yc, double &zc, double &rc);
 ```
@@ -71,7 +86,7 @@ Assume there are $i$ points on the surface, with their 3D positions $P_i=(x_i,y_
     xc = c[0]/2; yc = c[1]/2; zc = c[2]/2;
     rc = sqrt(c[3]+xc*xc+yc*yc+zc*zc);
 ```
-* FindBallCentres
+9. **FindBallCentres** <br />
 ```cpp
 void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, double radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2)
 ```
@@ -128,7 +143,7 @@ To ensure the accuracy of the calculations, we have added a block for sanity che
 
 Finally, we have obtained `centre_ball_1` and `centre_ball_2` for the reconstructed centre position of both markers.
 
-* world2pixel
+10. **world2pixel** <br />
 ```cpp
 void world2pixel(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D);
 ```
@@ -148,63 +163,65 @@ Assume there is no distortion factor, we aim to project 3D position `point_3D` t
     pixel_2D << x, y;
 ```
 
-* world2pixel_Acusense
+11. **world2pixel_Acusense** <br />
 ```cpp
 void world2pixel_Acusense(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D)
 ```
 This function projects a 3D point expressed in the depth frame onto the colour image plane. It first transforms the 3D point to the colour frame via `T_depth2RGB_Acusense` before projecting the 3D position onto the colour image plane via `world2pixel`. 
 
-## Public functions
-* FeatureDetection
-For class declaration
+---
 
-* ReadIntrinsicMatrix
+## Public functions
+1. **FeatureDetection** <br />
+    class object initialiser.
+
+2. **ReadIntrinsicMatrix** <br />
 ```cpp
 void ReadIntrinsicMatrix(const Eigen::MatrixXd &Intrinsic_mat)
 ```
 This function reads the intrinsic matrix of a camera.
 
-* ReadHandEyeTransform
+3. **ReadHandEyeTransform** <br />
 ```cpp
 void ReadHandEyeTransform(const Eigen::Matrix4d &T)
 ```
 This function reads the hand-eye transformation matrix between the camera and robot base frame. 
 
-* ReadAcusenseDepth2RGBMat
+4. **ReadAcusenseDepth2RGBMat** <br />
 ```cpp
 void ReadAcusenseDepth2RGBMat(const Eigen::Matrix4d &T_d_rgb)
 ```
 This function reads the extrinsic matrix between the depth and colour frame of the Acusense camera. 
 
-* ReadPointCloudPCD
+5. **ReadPointCloudPCD** <br />
 ```cpp
 void ReadPointCloudPCD(const std::string &file_path, const int &n_rows, const int &n_cols, cv::Mat &img, PointCloudT::Ptr &cloud)
 ```
 This functions reads point cloud from a local file and reshapes the point cloud into a `n_rows` $\times$ `n_cols` binary image, where pixels that have non-zero depth values are coloured in white, otherwise black. 
 
-* cvtDepth2Colour_Acusense
+6. **cvtDepth2Colour_Acusense** <br />
 ```cpp
 void cvtDepth2Colour_Acusense(const Eigen::Vector3d &pt_depth, Eigen::Vector3d &pt_colour)
 ```
 This function converts a 3D point expressed in the depth frame to the colour frame via the extrinsic matrix `T_depth2RGB_Acusense`.
 
-* cvt2cameraFrame
+7. **cvt2cameraFrame** <br />
 ```cpp
 void cvt2cameraFrame(const Eigen::Vector3d &point_robot, Eigen::Vector3d &point_camera);
 ```
 This function converts a 3D expressed in the robot frame to the camera frame through the hand-eye transformation matrix.
 
-* ReconstructJ4Position
+8. **ReconstructJ4Position** <br />
 ```cpp
 Eigen::Vector3d ReconstructJ4Position(const cv::Mat &img_depth, const PointCloudT::Ptr &cloud, const double &ball_1_radius, const double &ball_2_radius)
 ```
 This public function serves as a wrapper of several private functions for users to reconstruct the 3D position of joint 4. 
 The pipeline goes as follows
-1. Calculate the position of both markers in the depth camera frame through `FindBallCentres`. 
-2. Find out joint 4 position via simple linear algebra.
+- Calculate the position of both markers in the depth camera frame through `FindBallCentres`. 
+- Find out joint 4 position via simple linear algebra.
 
 
-* drawShaftAxisColourAcusense
+9. **drawShaftAxisColourAcusense** <br />
 ```cpp
 cv::Mat drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt)
 ```
