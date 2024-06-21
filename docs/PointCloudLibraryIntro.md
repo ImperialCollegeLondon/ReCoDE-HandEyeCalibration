@@ -1,5 +1,5 @@
 # Introduction to Point Cloud Library
-A bried introduction to basic usage of point cloud library. This intro.md is a prelude to featureDetection.md
+A comprehensive documentation of function classes can be referred to [PCL documentation](https://pointclouds.org/documentation/). In this markdown file, we only provide descriptions of basic function implementations that were used in this project. 
 
 ## Initialisation of point clouds
 
