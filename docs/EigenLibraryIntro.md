@@ -68,7 +68,9 @@ The function `SVD_rigid_transform` in `utils.cc` aims to find the hand-eye trans
 ```cpp
 Eigen::Matrix4d SVD_rigid_transform(const Eigen::MatrixXd &pts1, const Eigen::MatrixXd &pts2)
 ```
-The inputs for this function are two list of 3D points expressed in two different coordinate frames, and the output is a 4 $\times$ 4 homogeneous transformation matrix between the two coordinate systems. We first need to verify that the two matrices are of the same size, that is with known correspondences. 
+
+The inputs for this function are two lists of 3D points expressed in two different coordinate frames, and the output is a 4 $\times$ 4 homogeneous transformation matrix between the two coordinate systems. We first need to verify that the two matrices are of the same size, that is with known correspondences.
+
 ```cpp
     int n_pts1 = pts1.rows(), n_pts2 = pts2.rows();
     if(n_pts1 != n_pts2)
