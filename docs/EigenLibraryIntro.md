@@ -13,7 +13,8 @@ When `n_cols` is equal to 1, `mat` reduces to a vector. In this case, we can dir
 ```cpp
 Eigen::VectorXd mat(n_rows);
 ```
-By convention, all declared one-dimensional vectors are column vectors, and if we want to convert them into row vectors by using
+
+By convention, all declared one-dimensional matrices are column vectors, but we can convert them to row vectors by using
 ```cpp
 Eigen::VectorXd mat_row = mat.transpose();
 ```
