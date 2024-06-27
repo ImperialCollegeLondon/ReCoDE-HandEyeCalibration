@@ -104,7 +104,9 @@ The covariance matrix is constructed as
 ```cpp
 auto H = pts1_mat.transpose() * pts2_mat;
 ```
+
 We apply SVD algorithm on `H`, and we have
+
 ```cpp
     Eigen::MatrixXd U,S,V; // 3*3 matrices
     SVD(H,U,S,V);
