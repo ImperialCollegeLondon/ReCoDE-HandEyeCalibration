@@ -118,7 +118,9 @@ The rotation and translation components of the hand-eye transformation are
     auto R = V * U.transpose();
     auto t = -R * mean_1 + mean_2;
 ```
+
 Finally, we can construct the 4 $\times$ 4 homogeneous hand-eye transformation matrix as
+
 ```
     Eigen::Matrix4d T_12 = Eigen::Matrix4d::Identity();
     T_12.topLeftCorner(3,3) = R.topLeftCorner(3,3);
