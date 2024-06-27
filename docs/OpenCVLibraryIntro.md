@@ -49,6 +49,7 @@ img = cv::Mat(n_rows, n_cols, CV_8UC1, cv::Scalar(0));
         }
     }
 ```
+
 We use `.at` to assign values to a certain pixel with position `(i,j)`. We use the template operator `<uchar>` because we have declared a single-channeled black and white image.
 
 ## Contour Detection <br />
