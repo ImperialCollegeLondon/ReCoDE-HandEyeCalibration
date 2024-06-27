@@ -9,7 +9,8 @@ The following header files need to be included:
 #include <opencv2/highgui.hpp>
 ```
 
-## Read and write images <br />
+## Read and write images
+
 
 In OpenCV, all images are stored as matrix object `cv::Mat`. To read images, we first declare image objects `cv::Mat img_depth, img_IR;` and use the built-in function `cv::imread` to read images from a local path. <br />
 
