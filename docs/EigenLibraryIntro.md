@@ -111,7 +111,9 @@ We apply SVD algorithm on `H`, and we have
     Eigen::MatrixXd U,S,V; // 3*3 matrices
     SVD(H,U,S,V);
 ```
-The rotation and translatoin components of hand-eye transformation are 
+
+The rotation and translation components of the hand-eye transformation are 
+
 ```cpp
     auto R = V * U.transpose();
     auto t = -R * mean_1 + mean_2;
