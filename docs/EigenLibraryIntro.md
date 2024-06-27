@@ -137,7 +137,9 @@ The function `ReadMatrixFromTxt` is used for storing values in a `.txt` file int
 ```cpp
 void ReadMatrixFromTxt(const std::string path, Eigen::MatrixXd &output)
 ```
-We declare a file streamer `file` which iterates through each row of the `.txt` file and stores row components to a string object `line`. 
+
+We declare a file stream `file` which iterates through each row of the `.txt` file and stores row components to a string object `line`. 
+
 ```cpp
     std::ifstream file(path);
     std::string line, word;
