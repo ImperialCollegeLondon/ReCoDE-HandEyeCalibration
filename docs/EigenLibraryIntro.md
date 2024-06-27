@@ -45,6 +45,7 @@ From mathematical knowledge, we know that `U` is a `n_rows` $\times$ `n_rows` ma
 ```
 
 Then we obtain `U` and `V` through
+
 ```cpp
     U = svd_solver.matrixU();
     V = svd_solver.matrixV();
