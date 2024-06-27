@@ -50,7 +50,9 @@ Then we obtain `U` and `V` through
     U = svd_solver.matrixU();
     V = svd_solver.matrixV();
 ```
-Finally, we populate matrix `S` by first calculating the singular values followed by arranging these values along its main its diagonal.
+
+Finally, we populate matrix `S` by first calculating the singular values, followed by arranging these values along its main diagonal.
+
 ```cpp
     Eigen::VectorXd sigma_list = svd_solver.singularValues();
     for(size_t i=0; i < sigma_list.size(); i++)
