@@ -171,7 +171,9 @@ We then parse row-wise components by text delimiter - a space character in this 
         row_vec.clear();
     }
 ```
+
 Finally, we copy the elements in `matrix_input` to `output`
+
 ```cpp
     output.resize(row_count, n_cols);
     for(size_t i=0; i<row_count; i++)
