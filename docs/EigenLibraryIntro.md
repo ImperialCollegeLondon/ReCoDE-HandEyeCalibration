@@ -98,7 +98,9 @@ Then we try to find the central position for both sets of points and then create
     pts1_mat.rowwise() -= mean_1.transpose();
     pts2_mat.rowwise() -= mean_2.transpose();
 ```
+
 The covariance matrix is constructed as 
+
 ```cpp
 auto H = pts1_mat.transpose() * pts2_mat;
 ```
