@@ -27,7 +27,7 @@ cv::imwrite(img_overlay_filename, img_overlay);
 
 ## Create a new image
 
-When we try to create a depth mask in function `FeatureDetection::ReadPointCloudPCD`, we first declare an empty binary image with the size of `n_rows` $\times$ `n_cols`
+To create a depth mask in function `FeatureDetection::ReadPointCloudPCD`, we first need to declare an empty binary image with the size of `n_rows` $\times$ `n_cols`:
 
 ```c
 img = cv::Mat(n_rows, n_cols, CV_8UC1, cv::Scalar(0)); 
