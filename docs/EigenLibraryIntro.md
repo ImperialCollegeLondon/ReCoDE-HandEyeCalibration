@@ -151,7 +151,9 @@ We declare a file stream `file` which iterates through each row of the `.txt` fi
         return;
     }
 ```
-We then parse row-wise components by text splitter, space in this project. 
+
+We then parse row-wise components by text delimiter - a space character in this project. 
+
 ```cpp
     int row_count = 0, n_cols;
     while(std::getline(file, line))
