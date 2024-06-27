@@ -34,7 +34,9 @@ We first create an SVD object by using the following command
 ```cpp
 Eigen::JacobiSVD<Eigen::MatrixXd> svd_solver(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
 ```
+
 From mathematical knowledge, we know that `U` is a `n_rows` $\times$ `n_rows` matrix, `S` is a `n_rows` $\times$ `n_cols` sparse matrix with singular values along its main diagonal, and `V` is a `n_cols` $\times$ `n_cols` matrix. 
+
 ```cpp
     U.resize(A.rows(), A.rows());
     S.resize(A.rows(), A.cols());
