@@ -12,7 +12,7 @@ The following header files need to be included:
 ## Read and write images
 
 
-In OpenCV, all images are stored as matrix object `cv::Mat`. To read images, we first declare image objects `cv::Mat img_depth, img_IR;` and use the built-in function `cv::imread` to read images from a local path. <br />
+In OpenCV, all images are stored as matrix objects `cv::Mat`. To read images, we first declare image objects `cv::Mat img_depth, img_IR;` and use the built-in function `cv::imread` to read images from a local path.
 
 ```c
 img_IR = cv::imread(IR_file_path);
