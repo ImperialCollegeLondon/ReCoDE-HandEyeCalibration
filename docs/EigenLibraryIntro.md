@@ -3,7 +3,9 @@
 Eigen library is a useful library for linear algebra operations. A comprehensive documentation of Eigen classes and functions is listed on [Eigen library documentation](https://eigen.tuxfamily.org/dox/). This markdown file only provides descriptions for basic implementations that were used in this project. 
 
 ## Basic matrix operation
-To declare a matrix with `n_rows` and `n_cols` populated with double numbers, we use the following command
+
+To declare a matrix with `n_rows` and `n_cols` of double precision, we use the following command
+
 ```cpp
 Eigen::MatrixXd mat(n_rows, n_cols);
 ```
