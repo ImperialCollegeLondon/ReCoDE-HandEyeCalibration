@@ -131,7 +131,9 @@ Finally, we can construct the 4 $\times$ 4 homogeneous hand-eye transformation m
 Commands `topLeftCorner`, `topRightCorner` and `leftCols` are used for matrix block operation.
 
 ## IO operation
+
 The function `ReadMatrixFromTxt` is used for storing values in a `.txt` file into a matrix.
+
 ```cpp
 void ReadMatrixFromTxt(const std::string path, Eigen::MatrixXd &output)
 ```
