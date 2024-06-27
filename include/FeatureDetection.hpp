@@ -134,10 +134,14 @@ class FeatureDetection
          */
         void world2pixel(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D);
         /**
-         * @brief parameters of the designed markers
-         * 
-         */
-        double Lbb = 0.050, Lbp = 0.017; // ball1 ~ ball2 (m), ball2 ~ pitch (m), respectively
+        * @brief Parameters of the designed markers
+        * 
+        * - Lbb: Distance between ball1 and ball2 in meters
+        * - Lbp: Distance between ball2 and pitch in meters
+        */
+        double Lbb = 0.050; ///< Distance between ball1 and ball2 (m)
+        double Lbp = 0.017; ///< Distance between ball2 and pitch (m)
+
         /**
          * @brief Intrinsic parameters
          * 
