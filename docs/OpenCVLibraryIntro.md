@@ -25,7 +25,8 @@ When we need to save an image `img_overlay` to a given path, we first create a s
 cv::imwrite(img_overlay_filename, img_overlay);
 ```
 
-## Create a new image <br />
+## Create a new image
+
 When we try to create a depth mask in function `FeatureDetection::ReadPointCloudPCD`, we first declare an empty binary image with the size of `n_rows` $\times$ `n_cols`
 
 ```c
