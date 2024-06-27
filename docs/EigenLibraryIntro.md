@@ -62,7 +62,9 @@ Finally, we populate matrix `S` by first calculating the singular values, follow
 ```
 
 ## Find hand-eye transformation matrix using SVD
+
 The function `SVD_rigid_transform` in `utils.cc` aims to find the hand-eye transformation matrix through SVD operation. 
+
 ```cpp
 Eigen::Matrix4d SVD_rigid_transform(const Eigen::MatrixXd &pts1, const Eigen::MatrixXd &pts2)
 ```
