@@ -52,7 +52,8 @@ img = cv::Mat(n_rows, n_cols, CV_8UC1, cv::Scalar(0));
 
 We use `.at` to assign values to a certain pixel with position `(i,j)`. We use the template operator `<uchar>` because we have declared a single-channeled black and white image.
 
-## Contour Detection <br />
+## Contour Detection
+
 A contour is described by a list of points on the image as `std::vector<cv::Point>`. Therefore, all detected contours on an image are stored as `std::vector<std::vector<cv::Point>>`. We use the built-in fuction `cv::findContours` to detect contours of markers in a depth mask frame. 
 
 ```cpp
