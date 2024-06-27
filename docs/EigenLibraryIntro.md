@@ -78,7 +78,9 @@ The inputs for this function are two lists of 3D points expressed in two differe
         throw std::invalid_argument("pts1 size doesn't match with pts2");
     }
 ```
-Next, we copy the values of two input matrices to two new matrices for further matrix operation. We first declare two empty matrices with known sizes and then copy matrix components row by row. We use the operator `<<` to populate matrix components. 
+
+Next, we copy the values of two input matrices to two new matrices for further matrix operation. We first declare two empty matrices with known sizes and then copy matrix components row by row. We use the overloaded `<<` operator to populate matrix components.
+
 ```cpp
     Eigen::MatrixXd pts1_mat(n_pts1, 3), pts2_mat(n_pts2, 3);
     for(size_t i=0; i<n_pts1; i++)
