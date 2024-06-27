@@ -33,7 +33,7 @@ To create a depth mask in function `FeatureDetection::ReadPointCloudPCD`, we fir
 img = cv::Mat(n_rows, n_cols, CV_8UC1, cv::Scalar(0)); 
 ```
 
-`CV_8UC1` decides that the image we just created only has one channel, and each pixel stores an 8-digit unsigned integer. Then we start to read in point cloud representing the currenct frame and assign 255 (white) to pixels that  have non-zero depth values, otherwise black. 
+`CV_8UC1` decides that the image we just created only has one channel, and each pixel stores an 8-digit unsigned integer. Then we start to read in a point cloud representing the current frame and assign 255 (white) to pixels that have non-zero depth values, otherwise 0 (black).
 
 ```cpp
     for(size_t i=0; i < n_rows; i++)
