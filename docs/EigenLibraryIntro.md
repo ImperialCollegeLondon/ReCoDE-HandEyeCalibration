@@ -7,7 +7,9 @@ To declare a matrix with `n_rows` and `n_cols` populated with double numbers, we
 ```cpp
 Eigen::MatrixXd mat(n_rows, n_cols);
 ```
-When `n_cols` reduces to 1, `mat` reduces to a one-dimensional vector. In this case, we can directly declare it as a vector using the following command.
+
+When `n_cols` is equal to 1, `mat` reduces to a vector. In this case, we can directly declare it as a vector using the following command
+
 ```cpp
 Eigen::VectorXd mat(n_rows);
 ```
