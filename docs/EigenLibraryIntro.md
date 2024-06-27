@@ -28,7 +28,9 @@ By leveraging built-in functions, we can implement linear algebra algorithms on 
 ```cpp
 void SVD(const Eigen::MatrixXd &A, Eigen::MatrixXd &U, Eigen::MatrixXd &S, Eigen::MatrixXd &V)
 ```
+
 We first create an SVD object by using the following command
+
 ```cpp
 Eigen::JacobiSVD<Eigen::MatrixXd> svd_solver(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
 ```
