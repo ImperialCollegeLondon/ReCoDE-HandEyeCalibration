@@ -20,7 +20,9 @@ Eigen::VectorXd mat_row = mat.transpose();
 ```
 
 ## Singular Value Decomposition (SVD)
+
 By leveraging built-in functions, we can implement linear algebra algorithms on matrices. We have created the function `SVD` in `utils.cc` to decompose an `n_rows` $\times$ `n_cols` matrix `A` into `A=USV'`. 
+
 ```cpp
 void SVD(const Eigen::MatrixXd &A, Eigen::MatrixXd &U, Eigen::MatrixXd &S, Eigen::MatrixXd &V)
 ```
