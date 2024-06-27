@@ -127,6 +127,7 @@ Finally, we can construct the 4 $\times$ 4 homogeneous hand-eye transformation m
     T_12.topRightCorner(3,1) = t.leftCols(1);
     return T_12;
 ```
+
 Commands `topLeftCorner`, `topRightCorner` and `leftCols` are used for matrix block operation.
 
 ## IO operation
