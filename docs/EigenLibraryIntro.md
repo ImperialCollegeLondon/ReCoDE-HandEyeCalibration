@@ -91,6 +91,7 @@ Next, we copy the values of two input matrices to two new matrices for further m
 ```
 
 Then we try to find the central position for both sets of points and then create two lists of points representing their offsets from the central positions
+
 ```cpp
     Eigen::VectorXd mean_1 = pts1_mat.colwise().mean(), 
                     mean_2 = pts2_mat.colwise().mean();
