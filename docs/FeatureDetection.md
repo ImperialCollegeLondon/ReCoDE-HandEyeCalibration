@@ -95,6 +95,7 @@ void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, 
 This function builds upon the prvious functions `ContourDetection` and `Fit3DSphere`, aiming to find the centre positions of both red spherical markers given the depth image of the current scene. 
 
 First, we use the function `ContourDetection` to generate binary images with overlaid contours, where pixels within the contour are coloured in white. We also conduct a sanity check to make sure there are at least two circular contours detected in each frame.
+
 ```cpp
     // Step 1, find contours
     std::vector<cv::Mat> contour_img_list;
