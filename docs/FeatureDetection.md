@@ -6,7 +6,8 @@ This markdown file provides a detailed description of the functions declared wit
 
 It represents the intrinsic matrix for the RGB lens of the camera
 
-#### 2.  **fx, fy, cx, cy** <br />
+#### 2.  **fx, fy, cx, cy**
+
 Intrinsic camera parameters that comprise K_int.
 
 #### 3.  **Tcr, Trc** <br />
