@@ -21,7 +21,8 @@ It represents the distance between the centre of two spherical markers when they
 #### 5.  **Lbp** <br />
 It represents the distance between the centre of the smaller marker ball and joint 4 when it is places on the tool shaft. The value is 0.017 (m) by default.
 
-#### 6.  **T_depth2RGB_Acusense** <br />
+#### 6.  **T_depth2RGB_Acusense**
+
 The extrinsic matrix that transforms the depth frame to the colour frame of the Acusense camera.
 
 #### 7.  **ContourDetection**
