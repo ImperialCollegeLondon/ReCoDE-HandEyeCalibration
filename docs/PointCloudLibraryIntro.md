@@ -1,5 +1,8 @@
 # Introduction to Point Cloud Library (PCL)
-A comprehensive documentation of function classes can be referred to [PCL documentation](https://pointclouds.org/documentation/). In this markdown file, we only provide descriptions of basic function implementations that were used in this project. We utilised PCL for generating depth masks and obtaining the 3D position of surface points on the markers. The following header files need to be included.
+
+A comprehensive description of Point Cloud Library's functions and classes can be found at [PCL documentation](https://pointclouds.org/documentation/). In this section, we only provide descriptions of basic function implementations that were used in this project. We utilised PCL for generating depth masks and obtaining the 3D position of surface points on the markers.
+
+The following header files need to be included:
 ```cpp
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
