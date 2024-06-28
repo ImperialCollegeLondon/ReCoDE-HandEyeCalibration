@@ -38,7 +38,7 @@ This function reads input image and detect circular contours, the size of which 
 |:--:|:--:|
 | Fig 1. Init_IR photo | Fig 2. Init_depth photo |
 
-First, we leverage the built-in OpenCV function ```cv::findContours``` to detect all circular contours in the image.
+First, we leverage the built-in OpenCV function `cv::findContours` to detect all circular contours in the image.
    
 ```cpp
     contour_img_list.clear();
