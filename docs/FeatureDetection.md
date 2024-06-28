@@ -12,7 +12,8 @@ Intrinsic camera parameters that comprise K_int.
 #### 3.  **Tcr, Trc** <br />
 $4 \times 4$ homogenous transformation matrices between the camera and robot frame. 
 
-#### 4.  **Lbb** <br />
+#### 4.  **Lbb**
+
 It represents the distance between the centre of two spherical markers when they are placed on the tool shaft. The value is 0.050 (m) by default
 
 #### 5.  **Lbp** <br />
