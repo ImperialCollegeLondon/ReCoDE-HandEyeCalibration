@@ -76,6 +76,7 @@ void Fit3DSphere(const std::vector<cv::Point3d> &pt_list, double &xc, double &yc
 This function aims to find the 3D position of a spherical ball centre and the radius of the ball, given 3D positions of points on the spherical surface.  
 
 Assume there are $i$ points on the surface, with their 3D positions $P_i=(x_i,y_i,z_i)$. The centre of the spherical ball with a radius $r_c$ is $P_c=(x_c,y_c,z_c)$. The following relationship is satisfied $(x_i-x_c)^2+(y_i-y_c)^2+(z_i-z_c)^2=r^2_c$. By rearranging the equation, we have $x_i \times c_0+y_i \times c_1 + z_i \times c_2 + 1 \times c_3 = x^2_i + y^2_i + z^2_i$, where $c_0=\frac{1}{2}x_c, c_1=\frac{1}{2}y_c,c_2=\frac{1}{2}z_c, c_3=r^2_c-x^2_c-y^2_c-z^2_c$. Hence, we can calculate $x_c, y_c, z_c$ and $r_c$ after collecting a list of $P_i$. The code goes as follows.
+
 ```cpp
     int n_pts = pt_list.size();
     Eigen::MatrixXd A(n_pts, 4), b(n_pts,1);
