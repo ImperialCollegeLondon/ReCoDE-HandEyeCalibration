@@ -178,8 +178,8 @@ This function projects a 3D point expressed in the depth frame onto the colour i
 ---
 
 ## Public functions
-#### 1. **FeatureDetection** <br />
-class object initialiser.
+#### 1. **FeatureDetection**
+Constructor.
 
 #### 2. **ReadIntrinsicMatrix** <br />
 ```cpp
