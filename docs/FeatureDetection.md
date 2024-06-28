@@ -132,7 +132,8 @@ Second, we aim to extract the 3D position of points on the spherical surface, th
         double xc, yc, zc, rc;
         this->Fit3DSphere(contour_3d_positions, xc, yc, zc, rc);
 ```
-To ensure the accuracy of the calculations, we have added a block for sanity check. The criteria is that the reconstructed radii of markers should be within a 2mm range from the ground truth values.
+
+To ensure the accuracy of the calculations, we have added a block for sanity check. The criteria is that the reconstructed radii of markers should be within a 2 mm range of the ground truth values.
 
 ```cpp
         if(fabs(rc - radius_list[i])<=2.0)
