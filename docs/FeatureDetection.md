@@ -90,9 +90,6 @@ Assume there are $i$ points on the surface, with their 3D positions $P_i=(x_i,y_
     // Eigen::VectorXd c = A.colPivHouseholderQr().solve(b);
     xc = c[0]/2; yc = c[1]/2; zc = c[2]/2;
     rc = sqrt(c[3]+xc*xc+yc*yc+zc*zc);
-```
-#### 9. **FindBallCentres** <br />
-```cpp
 void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, double radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2)
 ```
 This function builds upon the prvious functions `ContourDetection` and `Fit3DSphere`, aiming to find the centre positions of both red spherical markers given the depth image of the current scene. 
