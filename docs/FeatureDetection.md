@@ -214,10 +214,10 @@ This function converts a 3D point expressed in the depth frame to the colour fra
 void cvt2cameraFrame(const Eigen::Vector3d &point_robot, Eigen::Vector3d &point_camera);
 This function converts a 3D expressed in the robot frame to the camera frame through the hand-eye transformation matrix.
 
-#### 8. **ReconstructJ4Position** <br />
+#### 8. **ReconstructJ4Position**
+
 ```cpp
 Eigen::Vector3d ReconstructJ4Position(const cv::Mat &img_depth, const PointCloudT::Ptr &cloud, const double &ball_1_radius, const double &ball_2_radius)
-```
 This public function serves as a wrapper of several private functions for users to reconstruct the 3D position of joint 4. 
 The pipeline goes as follows
 - Calculate the position of both markers in the depth camera frame through `FindBallCentres`. 
