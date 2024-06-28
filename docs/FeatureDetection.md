@@ -149,11 +149,10 @@ To ensure the accuracy of the calculations, we have added a block for sanity che
 
 Finally, we have obtained `centre_ball_1` and `centre_ball_2` for the reconstructed centre position of both markers.
 
-#### 10. **world2pixel** <br />
+#### 10. **world2pixel**
+
 ```cpp
 void world2pixel(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D);
-```
-This function projects a 3D point onto the image plane via projection geometry, with given intrinsic camera parameters. 
 
 Assume there is no distortion factor, we aim to project 3D position `point_3D` to its pixel coordinate `pixel_2D`. 
 ```cpp
