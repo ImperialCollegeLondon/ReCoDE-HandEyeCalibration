@@ -51,9 +51,6 @@ Then we rearrange the detected contours in an descending order
 ```cpp
     std::sort(contours.begin(), contours.end(),[](const std::vector<cv::Point>& c1, const std::vector<cv::Point>& c2)
               {return cv::contourArea(c1,false) > cv::contourArea(c2, false);}); 
-```
-Finally, we manually overlay these detected contours on the original image.
-```cpp
     for(int i=0; i<contours.size(); i++)
     { 
         if(cv::contourArea(contours[i]) > min_area)
