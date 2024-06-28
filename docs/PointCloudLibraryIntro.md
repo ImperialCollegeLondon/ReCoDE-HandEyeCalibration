@@ -9,7 +9,9 @@ The following header files need to be included:
 ```
 
 ## Initialisation of point clouds
-Point cloud is a container that stores points that represent a 3D geometric object. To describe these points, usually their positions, normal directions and colour information are used. We only leverage their 3D positions in this project. 
+
+A point cloud is a container that stores points that represent a 3D geometric object. To describe these points, usually their positions, normal directions and colour information are used. We only leverage their 3D positions in this project.
+ 
 ```cpp
 using PointCloudT = pcl::PointCloud<pcl::PointXYZ>;
 ```
