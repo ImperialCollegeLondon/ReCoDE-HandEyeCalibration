@@ -92,7 +92,8 @@ Assume there are $i$ points on the surface, with their 3D positions $P_i=(x_i,y_
     rc = sqrt(c[3]+xc*xc+yc*yc+zc*zc);
 void FindBallCentres(cv::Mat img, PointCloudT::Ptr cloud, double radius_ball_1, double radius_ball_2, Eigen::Vector3d &centre_ball_1, Eigen::Vector3d &centre_ball_2)
 ```
-This function builds upon the prvious functions `ContourDetection` and `Fit3DSphere`, aiming to find the centre positions of both red spherical markers given the depth image of the current scene. 
+
+This function builds upon the previous functions `ContourDetection` and `Fit3DSphere`, aiming to find the centre positions of both red spherical markers given the depth image of the current scene. 
 
 First, we use the function `ContourDetection` to generate binary images with overlaid contours, where pixels within the contour are coloured in white. We also conduct a sanity check to make sure there are at least two circular contours detected in each frame.
 
