@@ -202,10 +202,10 @@ void ReadAcusenseDepth2RGBMat(const Eigen::Matrix4d &T_d_rgb)
 ```cpp
 void ReadPointCloudPCD(const std::string &file_path, const int &n_rows, const int &n_cols, cv::Mat &img, PointCloudT::Ptr &cloud)
 
-#### 6. **cvtDepth2Colour_Acusense** <br />
+#### 6. **cvtDepth2Colour_Acusense**
+
 ```cpp
 void cvtDepth2Colour_Acusense(const Eigen::Vector3d &pt_depth, Eigen::Vector3d &pt_colour)
-```
 This function converts a 3D point expressed in the depth frame to the colour frame via the extrinsic matrix `T_depth2RGB_Acusense`.
 
 #### 7. **cvt2cameraFrame** <br />
