@@ -187,11 +187,10 @@ Constructor.
 void ReadIntrinsicMatrix(const Eigen::MatrixXd &Intrinsic_mat)
 This function reads the intrinsic matrix of a camera.
 
-#### 3. **ReadHandEyeTransform** <br />
+#### 3. **ReadHandEyeTransform**
+
 ```cpp
 void ReadHandEyeTransform(const Eigen::Matrix4d &T)
-```
-This function reads the hand-eye transformation matrix between the camera and robot base frame. 
 
 #### 4. **ReadAcusenseDepth2RGBMat** <br />
 ```cpp
