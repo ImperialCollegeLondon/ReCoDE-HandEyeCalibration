@@ -192,11 +192,10 @@ This function reads the intrinsic matrix of a camera.
 ```cpp
 void ReadHandEyeTransform(const Eigen::Matrix4d &T)
 
-#### 4. **ReadAcusenseDepth2RGBMat** <br />
+#### 4. **ReadAcusenseDepth2RGBMat**
+
 ```cpp
 void ReadAcusenseDepth2RGBMat(const Eigen::Matrix4d &T_d_rgb)
-```
-This function reads the extrinsic matrix between the depth and colour frame of the Acusense camera. 
 
 #### 5. **ReadPointCloudPCD**
 
