@@ -208,10 +208,10 @@ void ReadPointCloudPCD(const std::string &file_path, const int &n_rows, const in
 void cvtDepth2Colour_Acusense(const Eigen::Vector3d &pt_depth, Eigen::Vector3d &pt_colour)
 This function converts a 3D point expressed in the depth frame to the colour frame via the extrinsic matrix `T_depth2RGB_Acusense`.
 
-#### 7. **cvt2cameraFrame** <br />
+#### 7. **cvt2cameraFrame**
+
 ```cpp
 void cvt2cameraFrame(const Eigen::Vector3d &point_robot, Eigen::Vector3d &point_camera);
-```
 This function converts a 3D expressed in the robot frame to the camera frame through the hand-eye transformation matrix.
 
 #### 8. **ReconstructJ4Position** <br />
