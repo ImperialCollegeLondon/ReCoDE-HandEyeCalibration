@@ -155,6 +155,7 @@ Finally, we have obtained `centre_ball_1` and `centre_ball_2` for the reconstruc
 void world2pixel(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D);
 
 Assume there is no distortion factor, we aim to project 3D position `point_3D` to its pixel coordinate `pixel_2D`. 
+
 ```cpp
     double k1 = 0, k2 = 0, k3 = 0, p1 = 0, p2 = 0;
     double x1 = point_3D[0] / point_3D[2],
