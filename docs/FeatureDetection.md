@@ -10,7 +10,8 @@ It represents the intrinsic matrix for the RGB lens of the camera
 
 Intrinsic camera parameters that comprise K_int.
 
-#### 3.  **Tcr, Trc** <br />
+#### 3.  **Tcr, Trc**
+
 $4 \times 4$ homogenous transformation matrices between the camera and robot frame. 
 
 #### 4.  **Lbb**
