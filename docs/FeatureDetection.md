@@ -18,7 +18,8 @@ $4 \times 4$ homogenous transformation matrices between the camera and robot fra
 
 It represents the distance between the centre of two spherical markers when they are placed on the tool shaft. The value is 0.050 (m) by default
 
-#### 5.  **Lbp** <br />
+#### 5.  **Lbp**
+
 It represents the distance between the centre of the smaller marker ball and joint 4 when it is places on the tool shaft. The value is 0.017 (m) by default.
 
 #### 6.  **T_depth2RGB_Acusense**
