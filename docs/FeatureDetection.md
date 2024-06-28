@@ -198,11 +198,10 @@ void ReadAcusenseDepth2RGBMat(const Eigen::Matrix4d &T_d_rgb)
 ```
 This function reads the extrinsic matrix between the depth and colour frame of the Acusense camera. 
 
-#### 5. **ReadPointCloudPCD** <br />
+#### 5. **ReadPointCloudPCD**
+
 ```cpp
 void ReadPointCloudPCD(const std::string &file_path, const int &n_rows, const int &n_cols, cv::Mat &img, PointCloudT::Ptr &cloud)
-```
-This functions reads point cloud from a local file and reshapes the point cloud into a `n_rows` $\times$ `n_cols` binary image, where pixels that have non-zero depth values are coloured in white, otherwise black. 
 
 #### 6. **cvtDepth2Colour_Acusense** <br />
 ```cpp
