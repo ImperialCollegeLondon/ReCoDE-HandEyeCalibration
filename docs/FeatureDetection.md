@@ -181,10 +181,10 @@ This function projects a 3D point expressed in the depth frame onto the colour i
 #### 1. **FeatureDetection**
 Constructor.
 
-#### 2. **ReadIntrinsicMatrix** <br />
+#### 2. **ReadIntrinsicMatrix**
+
 ```cpp
 void ReadIntrinsicMatrix(const Eigen::MatrixXd &Intrinsic_mat)
-```
 This function reads the intrinsic matrix of a camera.
 
 #### 3. **ReadHandEyeTransform** <br />
