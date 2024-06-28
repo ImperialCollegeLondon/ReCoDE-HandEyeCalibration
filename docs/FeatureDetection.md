@@ -222,8 +222,8 @@ The pipeline goes as follows
 - Find out joint 4 position via simple linear algebra.
 
 
-#### 9. **drawShaftAxisColourAcusense** <br />
+#### 9. **drawShaftAxisColourAcusense**
+
 ```cpp
 cv::Mat drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt)
-```
 This function overlays the back-projected tool axis onto the image plane. The central tool axis is defined by two points on the axis. We selected the RCM point and joint 4 in this project. The idea is to first convert both the RCM point and joint 4 from the robot base frame to the depth frame of the camera via `cvt2cameraFrame`. Then we transform both points to the colour frame of the camera via `cvtDepth2Colour_Acusense`. Finally, we back project both points onto the colour image plane via `world2pixel` and connect these two points using a dashed line.
