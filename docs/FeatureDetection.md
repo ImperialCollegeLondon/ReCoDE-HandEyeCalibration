@@ -1,5 +1,5 @@
 # A detailed explnation for class FeatureDetection
-This markdown file provides a detailed description of the functions declared within class ```FeatureDetection```, an object that encapsulates computer vision algorithms used in this project.
+This section provides a detailed description of the functions declared within the ```FeatureDetection``` class, which encapsulates computer vision algorithms used in this project.
 
 ## Private variables & functions
 #### 1.  **K_int**
