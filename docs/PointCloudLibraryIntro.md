@@ -15,7 +15,9 @@ A point cloud is a container that stores points that represent a 3D geometric ob
 ```cpp
 using PointCloudT = pcl::PointCloud<pcl::PointXYZ>;
 ```
+
 For each recorded frame, we create a point cloud to store surface points captured by the depth sensing camera.
+
 ```cpp
 PointCloudT::Ptr frame_cloud(new PointCloudT);
 ```
