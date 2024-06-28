@@ -32,7 +32,7 @@ The extrinsic matrix that transforms the depth frame to the colour frame of the 
  void ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list)
  ```
 
-This function reads input image and detect circular contours, the size of which is larger than ```min_area```. Output ```contour_img_list``` is a vector of images overlaid with detected  circular contours, in the descending order of contour areas. 
+This function reads input image and detect circular contours, the size of which is larger than `min_area`. Output `contour_img_list` is a vector of images overlaid with detected  circular contours, in the descending order of contour areas. 
 
 | ![Init_IR](../Pics_for_demo/Init_IR_frame.png "Init_IR") | ![Init_depth](../Pics_for_demo/Init_depth_frame.png "Init_depth") |
 |:--:|:--:|
