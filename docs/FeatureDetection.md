@@ -108,6 +108,7 @@ First, we use the function `ContourDetection` to generate binary images with ove
 ```
 
 Second, we aim to extract the 3D position of points on the spherical surface, the 2D projection of which are pixels confined within the detected contour. Our method is to look up their 3D position from the depth image. The 3D position of the detected surface points are stored in `contour_3d_positions`, which are then sent into  `Fit3DSphere` for calculating the centre position of two spherical markers.
+
 ```cpp
         cv::Mat contour_img = contour_img_list[i];
         std::vector<cv::Point3d> contour_3d_positions;
