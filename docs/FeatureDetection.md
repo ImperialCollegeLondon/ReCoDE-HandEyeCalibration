@@ -67,7 +67,8 @@ Then we rearrange the detected contours in an descending order
 |:--:|:--:|
 | Fig 1. Contour 0 detected | Fig 2. Contour 1 detected |
 
-#### 8. **Fit3DSphere** <br />
+#### 8. **Fit3DSphere**
+
 ```cpp
 void Fit3DSphere(const std::vector<cv::Point3d> &pt_list, double &xc, double &yc, double &zc, double &rc);
 ```
