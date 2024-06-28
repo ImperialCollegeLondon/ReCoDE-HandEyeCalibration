@@ -169,10 +169,10 @@ Assume there is no distortion factor, we aim to project 3D position `point_3D` t
     pixel_2D << x, y;
 ```
 
-#### 11. **world2pixel_Acusense** <br />
+#### 11. **world2pixel_Acusense**
+
 ```cpp
 void world2pixel_Acusense(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D)
-```
 This function projects a 3D point expressed in the depth frame onto the colour image plane. It first transforms the 3D point to the colour frame via `T_depth2RGB_Acusense` before projecting the 3D position onto the colour image plane via `world2pixel`. 
 
 ---
