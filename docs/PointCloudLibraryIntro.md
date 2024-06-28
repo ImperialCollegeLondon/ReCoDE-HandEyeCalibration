@@ -23,34 +23,11 @@ PointCloudT::Ptr frame_cloud(new PointCloudT);
 ```
 
 ## Read and Write
+
 For a given recorded `.pcd` file, we use the built-in function `pcl::io::loadPCDFile` to read and store information to a point cloud. 
+
 ```cpp
     if (pcl::io::loadPCDFile<pcl::PointXYZ> (file_path, *cloud) == -1) //* load the file
     {
         PCL_ERROR ("Couldn't read file test_pcd.pcd \n");
     }
-```
-Then we want to create an image of depth mask sized by **n_rows** $\times$ **n_cols**, where pixels that correspond to non-zero depth values are coloured in white, otherwise black.
-```cpp
-    // Load pcd first
-    cloud->clear();  
-    if (pcl::io::loadPCDFile<pcl::PointXYZ> (file_path, *cloud) == -1) //* load the file
-    {
-        PCL_ERROR ("Couldn't read file test_pcd.pcd \n");
-    }
-    // Construct depth image
-    img = cv::Mat(n_rows, n_cols, CV_8UC1, cv::Scalar(0)); // first create a purely black image
-    for(size_t i=0; i < n_rows; i++)
-    {
-        for(size_t j=0; j< n_cols; j++)
-        {
-            int index = i * n_cols + j;
-            double pixel_depth = cloud->points[index].z;
-            if(pixel_depth != 0.0)
-            {
-                img.at<uchar>(i,j) = 255;
-            }
-        }
-    }
-```
-Finally, we have generated `img`, the depth mask, which is subsequently used for contour detection.
