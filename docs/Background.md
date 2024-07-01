@@ -40,10 +40,9 @@ Although different surgeries require using different surgical instruments, their
     Fig *. Definition of PSM joint frames <br>
 </p>
 
-#### b) Long Needle Driver Instrument
+#### b) Forceps Instrument
 
 We use joint 4 position on the instrument as the reference point for point set registration.
-$${\color{red}Pic:Needle-driver}$$
 
 #### c) DH parameters
 The DH parameter table is listed below:
