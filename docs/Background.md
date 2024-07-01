@@ -21,8 +21,11 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 
 
 ## Experimental setup
-- The first-generation da Vinci Research Kit (dVRK)
-    - Overview<br />
+
+### 1. The first-generation da Vinci Research Kit (dVRK)
+
+#### a) Overview
+
 The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) (**Fig-**). It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon.
 
 <p align="center" width="100%">
@@ -30,13 +33,20 @@ The first-generation dVRKs are repurposed out of retired first-generation da Vin
     Fig *. The first generation da Vinci Research Kit (dVRK) <br>
 </p>
 
-Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below.
-    $${\color{red}Pic:joint-frames}$$
-    - Instrument (Long Needle Driver)<br />
-    We use joint 4 position on the instrument as the reference point for point set registration.
-    $${\color{red}Pic:Needle-driver}$$
-    - DH parameters<br />
-    The DH parameter table is listed below:
+Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below (**Fig-**, cited from [[5]](#5)).
+
+<p align="center" width="100%">
+    <img width="50%" src=../Pics_for_demo/JointFrame.png> <br>
+    Fig *. Definition of PSM joint frames <br>
+</p>
+
+#### b) Long Needle Driver Instrument
+
+We use joint 4 position on the instrument as the reference point for point set registration.
+$${\color{red}Pic:Needle-driver}$$
+
+#### c) DH parameters
+The DH parameter table is listed below:
     
     
 | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
@@ -58,14 +68,18 @@ $$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
 
 $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
 
-- Acusense camera<br />
-  The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
-    - RGB lens
-    Colour frames are captured by the RGB lens, with a resolution of ****. Intrinsic matrix K_rgb
-    - Depth lens
-    Depth frames are captured by the Depth lens, with a resolution of ***, Intrinsic matrix K_depth
-- Bespoke markers<br />
-  Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red-markers}$$. 
+### 2. Acusense camera
+
+The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
+
+#### a) RGB lens
+Colour frames are captured by the RGB lens, with a resolution of ****. Intrinsic matrix K_rgb
+
+#### b) Depth lens
+Depth frames are captured by the Depth lens, with a resolution of ***, Intrinsic matrix K_depth
+
+### 3. Bespoke markers<br />
+Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red-markers}$$. 
 
 
 ## References
@@ -77,6 +91,8 @@ Shah, M., Eastman, R.D. and Hong, T., 2012, March. An overview of robot-sensor c
 Arun, K.S., Huang, T.S. and Blostein, S.D., 1987. Least-squares fitting of two 3-D point sets. IEEE Transactions on pattern analysis and machine intelligence, (5), pp.698-700. <br />
 <a id="4">[4]</a> 
 [https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters) <br />
+<a id="5">[5]</a>
+Hwang, M., Thananjeyan, B., Paradis, S., Seita, D., Ichnowski, J., Fer, D., Low, T. and Goldberg, K., 2020. Efficiently calibrating cable-driven surgical robots with RGBD fiducial sensing and recurrent neural networks. IEEE Robotics and Automation Letters, 5(4), pp.5937-5944. <br />
 
 
 
