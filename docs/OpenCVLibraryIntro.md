@@ -1,5 +1,5 @@
 # Introduction to OpenCV Library
-OpenCV is a powerful library for applications that involve operations on images and computer vision algorithms. A comprehensive version of its function/class documentation can be found at [OpenCV documentation](https://docs.opencv.org/4.x/). In this section, we only provide descriptions of the basic functions that were used in this project.
+OpenCV is a powerful C++ library for applications that involve operations on images and computer vision algorithms. A comprehensive version of its function/class documentation can be found at [OpenCV documentation](https://docs.opencv.org/4.x/). In this section, we only provide descriptions of the basic functions that were used in this project.
 
 The following header files need to be included:
 
