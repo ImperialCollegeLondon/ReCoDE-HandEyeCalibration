@@ -1,6 +1,6 @@
 # Introduction to Eigen Library
 
-Eigen library is a useful library for linear algebra operations. A comprehensive documentation of Eigen classes and functions is listed on [Eigen library documentation](https://eigen.tuxfamily.org/dox/). This markdown file only provides descriptions for basic implementations that were used in this project. 
+Eigen is a C++ library for linear algebra operations. A comprehensive documentation of Eigen's classes and functions can be found at [Eigen library documentation](https://eigen.tuxfamily.org/dox/). This section only provides descriptions for basic implementations that were used in this project.
 
 ## Basic matrix operation
 
