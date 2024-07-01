@@ -13,7 +13,7 @@ It is an essential procedure for applications that involve the use of cameras be
 ## Point set registration through Singular Value Decomposition (SVD)
 When correspondences are known between two point sets, the transformation matrix can be analytically calculated using the algorithm proposed in [[3]](#3). A brief summary of the algorithm is listed below. [link](https://www.youtube.com/watch?v=dhzLQfDBx2Q) provides a video tutorial explaining this algorithm. Assume there are two sets of points $\tilde{P}$={ $P_1$, $P_2$ ..., $P_n$ } and $\tilde{Q}$={ $Q_1$, $Q_2$ ..., $Q_n$ }, where set $\tilde{Q}$ is set $\tilde{P}$ after being applied with a rigid transformation matrix.
 
-**What is singular value decomposition?**
+$${\color{red}Pic:SVD for hand-eye}$$. 
 
 ## Robot forward kinematics
 In robotics, we describe the status of a robot in either the joint space or Cartesian space $${\color{red}Pic:robot-frames}$$. The joint space describes robot pose relative to joint coordinate frames, while the Cartesian space describes robot pose relative to the base frame of the robot *O<sub>0</sub>*. Different combinations of joint positions result in different poses of a robot, and this relationship is described by forward kinematics. Forward kinematics depends on both the joint status and the mechanical parameters of a robot, which are called Denavit-Hartenberg (DH) parameters. The selection DH parameters depends on how joint coordinate frames are established and hence is not unique to a robot. The selection of DH parameters can be referred to [[4]](#4). From DH parameters, we can construct a $4\times4$ matrix **T<sub>i,i+1</sub>** to describe the transformation between two adjacent joint coordinate frames *O<sub>i</sub>* and *O<sub>i+1</sub>*. Therefore, with knowledge of the forward kinematics and the position of point *P<sub>j</sub>* in joint *j* coordinate frame, we can recover its position in the robot base frame *P<sub>0</sub>* as
@@ -73,10 +73,10 @@ $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
 The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
 
 #### a) RGB lens
-Colour frames are captured by the RGB lens, with a resolution of ****. Intrinsic matrix K_rgb
+Colour frames are captured by the RGB lens, with a resolution of 600 $\times$ 800 pixels. Its intrinsic matrix is denoted as K_rgb.
 
 #### b) Depth lens
-Depth frames are captured by the Depth lens, with a resolution of ***, Intrinsic matrix K_depth
+Depth frames are captured by the Depth lens, with a resolution of 400 $\times$ 640 pixels, Its intrinsic matrix is denoted as K_depth.
 
 ### 3. Bespoke markers<br />
 Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red-markers}$$. 
