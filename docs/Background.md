@@ -1,7 +1,14 @@
 # Background
 
 ## Hand-eye calibration
-Hand-eye calibration is a well-studied research topic in the field of robotics. It aims to find the transformation matrix from the camera frame to the base frame of the robot $${\color{red}Pic:hand-eye}$$. It is an essential procedure for applications that involve the use of cameras because it helps align the camera frame with the robot frame, such that the robot can be commanded to move to a specific position indicated by the camera. Typically, hand-eye calibration problem is treated as an **AX=XB**[[1]](#1) or **AX=YB**[[2]](#2) problem, where **X** represents the unknown transformation matrix, and **A,B** matrices are related to the poses of the robot and camera. Depending on application scenarios, hand-eye calibration algorithms can be divided into marker-based and marker-free approaches, where markers provide easy access to obtaining camera poses. Although marker-based approaches provide higher accuracy, they are usually not suitable to be used for a clinical setup, and hence are constrained to a lab setup. Alternatively, hand-eye calibration can also be treated as a registration problem, where the transformation matrix is found by registering one set of points expressed in one coordinate frame to the same set of points expressed in another frame. In this project, we address hand-eye calibration problem according to the latter school of thought.
+Hand-eye calibration is a well-studied research topic in the field of robotics. It aims to find the transformation matrix from the camera frame to the base frame of the robot (Fig 1). 
+
+<p align="center" width="100%">
+    <img width="50%" src=../Pics_for_demo/HandEye.jpg> <br>
+    Fig 1. Hand-eye calibration <br>
+</p>
+
+It is an essential procedure for applications that involve the use of cameras because it helps align the camera frame with the robot frame, such that the robot can be commanded to move to a specific position indicated by the camera. Typically, hand-eye calibration problem is treated as an **AX=XB**[[1]](#1) or **AX=YB**[[2]](#2) problem, where **X** represents the unknown transformation matrix, and **A,B** matrices are related to the poses of the robot and camera. Depending on application scenarios, hand-eye calibration algorithms can be divided into marker-based and marker-free approaches, where markers provide easy access to obtaining camera poses. Although marker-based approaches provide higher accuracy, they are usually not suitable to be used for a clinical setup, and hence are constrained to a lab setup. Alternatively, hand-eye calibration can also be treated as a registration problem, where the transformation matrix is found by registering one set of points expressed in one coordinate frame to the same set of points expressed in another frame. In this project, we address hand-eye calibration problem according to the latter school of thought.
 
 ## Point set registration through Singular Value Decomposition (SVD)
 When correspondences are known between two point sets, the transformation matrix can be analytically calculated using the algorithm proposed in [[3]](#3). A brief summary of the algorithm is listed below. [link](https://www.youtube.com/watch?v=dhzLQfDBx2Q) provides a video tutorial explaining this algorithm. Assume there are two sets of points $\tilde{P}$={ $P_1$, $P_2$ ..., $P_n$ } and $\tilde{Q}$={ $Q_1$, $Q_2$ ..., $Q_n$ }, where set $\tilde{Q}$ is set $\tilde{P}$ after being applied with a rigid transformation matrix.
@@ -16,7 +23,14 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
 ## Experimental setup
 - The first-generation da Vinci Research Kit (dVRK)
     - Overview<br />
-    The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) $${\color{red}Pic: da-Vinci}$$. It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon. Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below.
+The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) (**Fig-**). It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon.
+
+<p align="center" width="100%">
+    <img width="50%" src=../Pics_for_demo/dvrk.jpeg> <br>
+    Fig *. The first generation da Vinci Research Kit (dVRK) <br>
+</p>
+
+Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below.
     $${\color{red}Pic:joint-frames}$$
     - Instrument (Long Needle Driver)<br />
     We use joint 4 position on the instrument as the reference point for point set registration.
@@ -24,23 +38,25 @@ $$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
     - DH parameters<br />
     The DH parameter table is listed below:
     
-        | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
-        | -------------   | ------------- | ------------- | ------------- |------------- |
-        | 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
-        | 2 | 0 | $\frac{\pi}{2}$ | 0 | $q_2$ - $\frac{\pi}{2}$ |
-        | 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
-        | 4 | 0 | 0 | $L_2$ | $q_4$ |
-        | ... | ... | ... | ... | ... |
-    where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_2$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
+    
+| **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
+| -------------   | ------------- | ------------- | ------------- |------------- |
+| 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
+| 2 | 0 | $\frac{\pi}{2}$ | 0 | $q_2$ - $\frac{\pi}{2}$ |
+| 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
+| 4 | 0 | 0 | $L_2$ | $q_4$ |
+| ... | ... | ... | ... | ... |
 
-    $$T_{04}=T_{01}T_{12}T_{23}T_{34}$$
+where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_2$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
 
-    And joint 4 position ($j_{4x},j_{4y},j_{4z}$) in the base frame is 
-    $$j_{4x}=L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2)$$
+$$T_{04}=T_{01}T_{12}T_{23}T_{34}$$
 
-    $$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
+And joint 4 position ($j_{4x},j_{4y},j_{4z}$) in the base frame is 
+$$j_{4x}=L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2)$$
 
-    $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
+$$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
+
+$$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
 
 - Acusense camera<br />
   The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
