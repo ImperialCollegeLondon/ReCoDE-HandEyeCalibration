@@ -29,7 +29,7 @@ By leveraging built-in functions to perform linear algebra operations on matrice
 void SVD(const Eigen::MatrixXd &A, Eigen::MatrixXd &U, Eigen::MatrixXd &S, Eigen::MatrixXd &V)
 ```
 
-We first create an SVD object by using the following command
+We first create an SVD object by using the following statement
 
 ```cpp
 Eigen::JacobiSVD<Eigen::MatrixXd> svd_solver(A, Eigen::ComputeThinU | Eigen::ComputeThinV);
