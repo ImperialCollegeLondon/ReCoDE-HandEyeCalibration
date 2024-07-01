@@ -94,25 +94,31 @@ int main()
       pos_j4_camera *= 1e-3; // unit (m)
       Joint4PosList_camera.row(count) = pos_j4_camera;
       cv::destroyAllWindows();
+
+      if(count >=1)
+      {
+        Eigen::Matrix4d Trc = SVD_rigid_transform(Joint4PosList_camera, Joint4PosList_robot),
+                        Tcr = Trc.inverse();
+        // update Tcr
+        DepthCamera.ReadHandEyeTransform(Tcr);
+        // SVD to find out Hand-eye transformation matrix
+        std::cout<<Trc<<std::endl;
+
+        Eigen::Vector3d rcm_pos_robot = Eigen::Vector3d::Zero(),
+                        j4_pos_robot,
+                        rcm_pos_cam, j4_pos_cam;
+        j4_pos_robot << Joint4PosList_robot(count,0), Joint4PosList_robot(count,1), Joint4PosList_robot(count,2);
+        std::string output_img_name = "frame" + std::to_string(count) + ".jpg";
+        cv::Mat img_colour = cv::imread(RGB_folder_path + output_img_name);
+        DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
+        DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
+
+        cv::Mat img_overlay = DepthCamera.drawShaftAxisColourAcusense(img_colour, "overlay", rcm_pos_cam, j4_pos_cam);
+        std::string img_overlay_filename = output_folder_path + "hand_eye_OTF/" + "overlay_" + "frame" + std::to_string(count) + ".jpg";
+        cv::imwrite(img_overlay_filename, img_overlay);
+      }
+
     }
-    Eigen::Matrix4d Trc = SVD_rigid_transform(Joint4PosList_camera, Joint4PosList_robot),
-                    Tcr = Trc.inverse();
 
-    // Overlay tool axis
-    DepthCamera.ReadHandEyeTransform(Tcr);
-    Eigen::Vector3d rcm_pos_robot = Eigen::Vector3d::Zero(),
-                    j4_pos_robot,
-                    rcm_pos_cam, j4_pos_cam;
-    j4_pos_robot << Joint4PosList_robot(n_frames-1,0), Joint4PosList_robot(n_frames-1,1), Joint4PosList_robot(n_frames-1,2);
-    std::string output_img_name = "frame" + std::to_string(n_frames-1) + ".jpg";
-    cv::Mat img_colour = cv::imread(RGB_folder_path + output_img_name);
-    DepthCamera.cvt2cameraFrame(rcm_pos_robot, rcm_pos_cam);
-    DepthCamera.cvt2cameraFrame(j4_pos_robot, j4_pos_cam);
-
-    cv::Mat img_overlay = DepthCamera.drawShaftAxisColourAcusense(img_colour, "overlay", rcm_pos_cam, j4_pos_cam);
-    std::string img_overlay_filename = output_folder_path + "overlay.jpg";
-    cv::imwrite(img_overlay_filename, img_overlay);
-    // SVD to find out Hand-eye transformation matrix
-    std::cout<<Trc<<std::endl;
     return 1.0;
 }
