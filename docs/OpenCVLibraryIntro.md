@@ -18,7 +18,7 @@ In OpenCV, all images are stored as matrix objects `cv::Mat`. To read images, we
 img_IR = cv::imread(IR_file_path);
 ```
 
-The size of the image is `img_IR.rows` $\times$ `img_IR.cols`.
+The size of the image is `img_IR.rows` $\times$ `img_IR.cols`, which are equal to the height and width of the image in pixels, respectively.
 
 When we need to save an image `img_overlay` to a given path, we first create a string object for the path `img_overlay_filename`, then use the built-in OpenCV function `cv::write` 
 ```cpp
