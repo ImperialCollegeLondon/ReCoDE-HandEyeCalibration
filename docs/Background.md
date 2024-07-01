@@ -42,7 +42,7 @@ Although different surgeries require using different surgical instruments, their
 
 #### b) Forceps Instrument
 
-We use joint 4 position on the instrument as the reference point for point set registration.
+We use joint 4 position on the instrument as the reference point for point set registration. The forceps instrument is shown in Fig* .
 
 #### c) DH parameters
 The DH parameter table is listed below:
@@ -69,7 +69,12 @@ $$j_{4z}=-L_2*cos(q_1)*cos(q_2) + (L_1 - q_3)*cos(q_1)*cos(q_2)$$
 
 ### 2. Acusense camera
 
-The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. $${\color{red}Pic:Acusense-lens}$$
+The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. The camera is shown in Fig *.
+
+<p align="center" width="100%">
+    <img width="50%" src=../Pics_for_demo/Acusense_annotated.jpg> <br>
+    Fig *. Acusense camera <br>
+</p>
 
 #### a) RGB lens
 Colour frames are captured by the RGB lens, with a resolution of 600 $\times$ 800 pixels. Its intrinsic matrix is denoted as K_rgb.
@@ -78,8 +83,12 @@ Colour frames are captured by the RGB lens, with a resolution of 600 $\times$ 80
 Depth frames are captured by the Depth lens, with a resolution of 400 $\times$ 640 pixels, Its intrinsic matrix is denoted as K_depth.
 
 ### 3. Bespoke markers<br />
-Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. $${\color{red}Pic:red-markers}$$. 
+Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. These marker balls are shown in Fig* .
 
+<p align="center" width="100%">
+    <img width="50%" src=../Pics_for_demo/marker_Forceps_annotated.jpg> <br>
+    Fig *. Marker balls and the forceps instrument <br>
+</p>
 
 ## References
 <a id="1">[1]</a> 
