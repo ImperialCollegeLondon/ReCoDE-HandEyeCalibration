@@ -4,7 +4,7 @@ Eigen is a C++ library for linear algebra operations. A comprehensive documentat
 
 ## Basic matrix operation
 
-To declare a matrix with `n_rows` and `n_cols` of double precision, we use the following command
+To declare a matrix with `n_rows` and `n_cols` of double precision, we use the following statement
 
 ```cpp
 Eigen::MatrixXd mat(n_rows, n_cols);
