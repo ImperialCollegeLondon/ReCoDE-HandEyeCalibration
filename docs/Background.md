@@ -97,7 +97,7 @@ Colour frames are captured by the RGB lens, with a resolution of 600 $\times$ 80
 Depth frames are captured by the Depth lens, with a resolution of 400 $\times$ 640 pixels, Its intrinsic matrix is denoted as K_depth.
 
 ### 3. Bespoke markers<br />
-Two 3D printed red balls with different radius that could be fitted through the shaft of da Vinci instruments. These marker balls are shown in Fig 6.
+Two 3D printed red balls with different radii that could be fitted through the shaft of da Vinci instruments. These marker balls are shown in Fig 6.
 
 <p align="center" width="100%">
     <img width="50%" src=../Pics_for_demo/marker_Forceps_annotated.jpg> <br>
