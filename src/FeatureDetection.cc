@@ -61,8 +61,8 @@ cv::Mat FeatureDetection::drawShaftAxisColourAcusense(cv::Mat img, std::string w
     cv::Mat img_copy = img.clone();
     DrawDashedLine(img_copy, origin_cv, end_cv, green, 2, "dotted", 10);
     cv::circle(img_copy, end_cv, 3, red, -1);
-    // cv::imshow(window_name, img_copy);
-    // cv::waitKey(0);
+    cv::imshow(window_name, img_copy);
+    cv::waitKey(0);
     return img_copy;
 }
 
