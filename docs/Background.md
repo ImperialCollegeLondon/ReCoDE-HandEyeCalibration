@@ -19,7 +19,7 @@ Assume there are two sets of points $\tilde{P}$={ $P_1$, $P_2$ ..., $P_n$ } and 
 We denote the central positions $\overline{P}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} P_i$ and $\overline{Q}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} Q_i$, then we update the two point sets as $\tilde{P}$={ $P_1-\overline{P}$, $P_2-\overline{P}$ ..., $P_n-\overline{P}$ } and $\tilde{Q}$={ $Q_1-\overline{Q}$, $Q_2-\overline{Q}$ ..., $Q_n-\overline{Q}$ }. To facilitate further calculation, we use matrices to store these points. Matrix $A$ is used to represent the updated point set $\tilde{P}$, and matrix $B$ for the updated point set $\tilde{Q}$. Both $A$ and $B$ are n $\times$ 3 matrices, where each row stores the position of a 3D point.
 
 ### Step 2. Implement SVD on the convariance matrix
-We construct the covariance matrix $H=A'B$. Then we implement SVD on $H$, and hence $H=USV'$. 
+We construct the covariance matrix $H=A'B$. Then we perform SVD on $H$, and hence $H=USV'$. 
 
 ### Step 3. Reconstruct $T_{12}$
 The rotational component of $T_{12}$ can be found as $R=VU'$, and the translational component of $T_{12}$ can be found as $t=-R \overline{P} + \overline{Q}$
