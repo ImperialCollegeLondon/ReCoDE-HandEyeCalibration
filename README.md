@@ -11,7 +11,7 @@ Hand-eye calibration is a well-studied topic in the field of robotics. Applicati
 |:--:|
 | Fig 1. Experimental setup |
 
-The method presented in this project hinges on conducting registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. Hand-eye calibration results can be visualised through 2D back projections. Fig 2 and Fig 3 display the back projection of a surgical tool shaft after accurate and inaccurate hand-eye calibrations, respectively. 
+The method presented in this project aims to conduct registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. Hand-eye calibration results can be visualised through 2D back projections. Fig 2 and Fig 3 display the back projection of a surgical tool shaft after accurate and inaccurate hand-eye calibrations, respectively. 
 
 | ![AfterCalib](/Pics_for_demo/AccurateCalib.gif "AfterCalib") | ![BeforeCalib](/Pics_for_demo/InaccurateCalib.gif "BeforeCalib") |
 |:--:|:--:|
@@ -48,7 +48,7 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
 - Basic knowledge on robotics (eg. Denavit–Hartenberg (DH) parameters, forward kinematics)
 - Hand-eye calibration and fundamental knowledge on computer vision (eg. camera intrinsic matrix, extrinsic matrix, image projection)
 - Linear algebra (eg. Singular Value Decomposition (SVD))
-Detailed information can be referred to `Background.md`
+Detailed information can be referred to `docs/Background.md`
 <!-- List the system requirements and how to obtain them, that can be as simple
 as adding a hyperlink to as detailed as writting step-by-step instructions.
 How detailed the instructions should be will vary on a case-by-case basis.
@@ -88,7 +88,7 @@ Solutions to the above can be found in `solutions`.
 -->
 
 ## Getting Started
-Background knowledge on robotics and computer vision can be referred to `Background.d`. The workflow of this project can be referred to `Code_Overview.md`. `EigenLibraryIntro.md`, `OpenCVLibraryIntro.md` and `PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `input.md` provides information of input files used in this project. 
+Background knowledge on robotics and computer vision can be referred to `docs/Background.md`. The workflow of this project can be referred to `docs/Code_Overview.md`. `docs/EigenLibraryIntro.md`, `docs/OpenCVLibraryIntro.md` and `docs/PointCloudLibraryIntro.md` contain information on the basic usage of these C++ libraries, and explanations on related fuctions written in this project using these libraries. `docs/input.md` provides information of input files used in this project. 
 <!-- An overview of the files and folder in the exemplar.
 Not all files and directories need to be listed, just the important
 sections of your project, like the learning material, the code, the tests, etc.
@@ -127,6 +127,7 @@ in a tree node.
 ├── notebooks
 ├── README.md
 ├── LICENSE.md
+├── mkdocs.yml
 └── requirements.txt 
 ```
 
