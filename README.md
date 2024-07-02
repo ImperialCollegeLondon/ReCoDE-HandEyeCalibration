@@ -15,7 +15,7 @@ The method presented in this project aims to conduct registration between two se
 
 | ![AfterCalib](/Pics_for_demo/AccurateCalib.gif "AfterCalib") | ![BeforeCalib](/Pics_for_demo/InaccurateCalib.gif "BeforeCalib") |
 |:--:|:--:|
-| Fig 2. Overlay with accurate calibration | Fig 3. Overlay without accurate calibration |
+| Fig 2. Overlay with accurate calibration | Fig 3. Overlay without inaccurate calibration |
 
 <!-- What should the students going through your exemplar learn -->
 
