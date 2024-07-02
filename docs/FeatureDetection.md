@@ -1,7 +1,9 @@
 # A detailed explnation for class FeatureDetection
-This section provides a detailed description of the functions declared within the ```FeatureDetection``` class, which encapsulates computer vision algorithms used in this project.
+This section provides a detailed description of some of the functions declared within the ```FeatureDetection``` class, which encapsulates computer vision algorithms used in this project. Descriptions for the other functions within this class can be found in the Documentation section.
 
 ## Private variables & functions
+
+<!---
 #### 1.  **K_int**
 
 It represents the intrinsic matrix for the RGB lens of the camera
@@ -25,8 +27,9 @@ It represents the distance between the centre of the smaller marker ball and joi
 #### 6.  **T_depth2RGB_Acusense**
 
 The extrinsic matrix that transforms the depth frame to the colour frame of the Acusense camera.
+--->
 
-#### 7.  **ContourDetection**
+#### 1.  **ContourDetection**
 
  ```cpp
  void ContourDetection(const cv::Mat image, int min_area, std::vector<cv::Mat> &contour_img_list)
@@ -65,9 +68,9 @@ Then we rearrange the detected contours in an descending order
 
 | ![Contour_0](../Pics_for_demo/find_contours0.png "Contour_0") | ![Contour_1](../Pics_for_demo/find_contours1.png "Contour_1") |
 |:--:|:--:|
-| Fig 1. Contour 0 detected | Fig 2. Contour 1 detected |
+| Fig 3. Contour 0 detected | Fig 4. Contour 1 detected |
 
-#### 8. **Fit3DSphere**
+#### 2. **Fit3DSphere**
 
 ```cpp
 void Fit3DSphere(const std::vector<cv::Point3d> &pt_list, double &xc, double &yc, double &zc, double &rc);
@@ -75,7 +78,7 @@ void Fit3DSphere(const std::vector<cv::Point3d> &pt_list, double &xc, double &yc
 
 This function aims to find the 3D position of a spherical ball centre and the radius of the ball, given 3D positions of points on the spherical surface.  
 
-Assume there are $i$ points on the surface, with their 3D positions $P_i=(x_i,y_i,z_i)$. The centre of the spherical ball with a radius $r_c$ is $P_c=(x_c,y_c,z_c)$. The following relationship is satisfied $(x_i-x_c)^2+(y_i-y_c)^2+(z_i-z_c)^2=r^2_c$. By rearranging the equation, we have $x_i \times c_0+y_i \times c_1 + z_i \times c_2 + 1 \times c_3 = x^2_i + y^2_i + z^2_i$, where $c_0=\frac{1}{2}x_c, c_1=\frac{1}{2}y_c,c_2=\frac{1}{2}z_c, c_3=r^2_c-x^2_c-y^2_c-z^2_c$. Hence, we can calculate $x_c, y_c, z_c$ and $r_c$ after collecting a list of $P_i$. The code goes as follows.
+Assume there are $\textrm{i}$ points on the surface, with their 3D positions $P_ \textrm{i}=( \textrm{x} _ \textrm{i}, \textrm{y} _ \textrm{i}, \textrm{z} _ \textrm{i})$. The centre of the spherical ball with a radius $\textrm{r} _ \textrm{c}$ is $P_ \textrm{c}=( \textrm{x} _ \textrm{c}, \textrm{y} _ \textrm{c}, \textrm{z} _ \textrm{c})$. The following relationship is satisfied $( \textrm{x} _ \textrm{i}- \textrm{x} _ \textrm{c})^2+( \textrm{y} _ \textrm{i} - \textrm{y} _ \textrm{c})^2+( \textrm{z} _ \textrm{i} - \textrm{z} _ \textrm{c})^2= \textrm{r} ^2 _ \textrm{c}$. By rearranging the equation, we have $\textrm{x} _ \textrm{i} \times \textrm{c} _ 0+ \textrm{y} _ \textrm{i} \times \textrm{c} _ 1 + \textrm{z} _ \textrm{i} \times \textrm{c} _ 2 + 1 \times \textrm{c} _ 3 = \textrm{x} ^ 2_ \textrm{i} + \textrm{y}^2 _ \textrm{i} + \textrm{z}^2 _ \textrm{i}$, where $\textrm{c} _ 0=\frac{1}{2} \textrm{x} _ \textrm{c}, \textrm{c} _ 1=\frac{1}{2} \textrm{y} _ \textrm{c}, \textrm{c} _ 2=\frac{1}{2} \textrm{z} _ \textrm{c}, \textrm{c}_ 3= \textrm{r} ^ 2_ \textrm{c} - \textrm{x}^2 _ \textrm{c} - \textrm{y} ^ 2 _ \textrm{c} - \textrm{z} ^ 2 _ \textrm{c}$. Hence, we can calculate $\textrm{x} _ \textrm{c}, \textrm{y} _ \textrm{c}, \textrm{z} _ \textrm{c}$ and $\textrm{r} _ \textrm{c}$ after collecting a list of $P _ \textrm{i}$. The code goes as follows.
 
 ```cpp
     int n_pts = pt_list.size();
@@ -149,6 +152,7 @@ To ensure the accuracy of the calculations, we have added a block for sanity che
 
 Finally, we have obtained `centre_ball_1` and `centre_ball_2` for the reconstructed centre position of both markers.
 
+<!---
 #### 10. **world2pixel**
 
 ```cpp
@@ -173,11 +177,14 @@ Assume there is no distortion factor, we aim to project 3D position `point_3D` t
 
 ```cpp
 void world2pixel_Acusense(const Eigen::Vector3d &point_3D, Eigen::Vector2d &pixel_2D)
+```
 This function projects a 3D point expressed in the depth frame onto the colour image plane. It first transforms the 3D point to the colour frame via `T_depth2RGB_Acusense` before projecting the 3D position onto the colour image plane via `world2pixel`. 
+--->
 
 ---
 
 ## Public functions
+<!---
 #### 1. **FeatureDetection**
 Constructor.
 
@@ -185,47 +192,58 @@ Constructor.
 
 ```cpp
 void ReadIntrinsicMatrix(const Eigen::MatrixXd &Intrinsic_mat)
+```
 This function reads the intrinsic matrix of a camera.
 
 #### 3. **ReadHandEyeTransform**
 
 ```cpp
 void ReadHandEyeTransform(const Eigen::Matrix4d &T)
+```
 
 #### 4. **ReadAcusenseDepth2RGBMat**
 
 ```cpp
 void ReadAcusenseDepth2RGBMat(const Eigen::Matrix4d &T_d_rgb)
+```
 
 #### 5. **ReadPointCloudPCD**
 
 ```cpp
 void ReadPointCloudPCD(const std::string &file_path, const int &n_rows, const int &n_cols, cv::Mat &img, PointCloudT::Ptr &cloud)
+```
 
 #### 6. **cvtDepth2Colour_Acusense**
 
 ```cpp
 void cvtDepth2Colour_Acusense(const Eigen::Vector3d &pt_depth, Eigen::Vector3d &pt_colour)
+```
 This function converts a 3D point expressed in the depth frame to the colour frame via the extrinsic matrix `T_depth2RGB_Acusense`.
 
 #### 7. **cvt2cameraFrame**
 
 ```cpp
 void cvt2cameraFrame(const Eigen::Vector3d &point_robot, Eigen::Vector3d &point_camera);
+```
 This function converts a 3D expressed in the robot frame to the camera frame through the hand-eye transformation matrix.
+--->
 
-#### 8. **ReconstructJ4Position**
+#### 1. **ReconstructJ4Position**
 
 ```cpp
 Eigen::Vector3d ReconstructJ4Position(const cv::Mat &img_depth, const PointCloudT::Ptr &cloud, const double &ball_1_radius, const double &ball_2_radius)
+```
+
 This public function serves as a wrapper of several private functions for users to reconstruct the 3D position of joint 4. 
 The pipeline goes as follows
 - Calculate the position of both markers in the depth camera frame through `FindBallCentres`. 
 - Find out joint 4 position via simple linear algebra.
 
 
-#### 9. **drawShaftAxisColourAcusense**
+#### 2. **drawShaftAxisColourAcusense**
 
 ```cpp
 cv::Mat drawShaftAxisColourAcusense(cv::Mat img, std::string window_name, const Eigen::Vector3d &origin, const Eigen::Vector3d &end_pt)
+```
+
 This function overlays the back-projected tool axis onto the image plane. The central tool axis is defined by two points on the axis. We selected the RCM point and joint 4 in this project. The idea is to first convert both the RCM point and joint 4 from the robot base frame to the depth frame of the camera via `cvt2cameraFrame`. Then we transform both points to the colour frame of the camera via `cvtDepth2Colour_Acusense`. Finally, we back project both points onto the colour image plane via `world2pixel` and connect these two points using a dashed line.
