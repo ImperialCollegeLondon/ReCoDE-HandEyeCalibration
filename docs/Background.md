@@ -8,21 +8,21 @@ Hand-eye calibration is a well-studied research topic in the field of robotics. 
     Fig 1. Hand-eye calibration <br>
 </p>
 
-It is an essential procedure for applications that involve the use of cameras because it helps align the camera frame with the robot frame, such that the robot can be commanded to move to a specific position indicated by the camera. Typically, hand-eye calibration problem is treated as an **AX=XB**[[1]](#1) or **AX=YB**[[2]](#2) problem, where **X** represents the unknown transformation matrix, and **A,B** matrices are related to the poses of the robot and camera. Depending on application scenarios, hand-eye calibration algorithms can be divided into marker-based and marker-free approaches, where markers provide easy access to obtaining camera poses. Although marker-based approaches provide higher accuracy, they are usually not suitable to be used for a clinical setup, and hence are constrained to a lab setup. Alternatively, hand-eye calibration can also be treated as a registration problem, where the transformation matrix is found by registering one set of points expressed in one coordinate frame to the same set of points expressed in another frame. In this project, we address hand-eye calibration problem according to the latter school of thought.
+It is an essential procedure for applications that involve the use of cameras because it helps align the camera frame with the robot frame, such that the robot can be commanded to move to a specific position indicated by the camera. Typically, hand-eye calibration problem is treated as an $\mathbf{AX=XB}$ [[1]](#1) or $\mathbf{AX=YB}$ [[2]](#2) problem, where $\mathbf{X}$ represents the unknown transformation matrix, and $\mathbf{A,B}$ matrices are related to the poses of the robot and camera. Depending on application scenarios, hand-eye calibration algorithms can be divided into marker-based and marker-free approaches, where markers provide easy access to obtaining camera poses. Although marker-based approaches provide higher accuracy, they are usually not suitable to be used for a clinical setup, and hence are constrained to a lab setup. Alternatively, hand-eye calibration can also be treated as a registration problem, where the transformation matrix is found by registering one set of points expressed in one coordinate frame to the same set of points expressed in another frame. In this project, we address hand-eye calibration problem according to the latter school of thought.
 
 ## Point set registration through Singular Value Decomposition (SVD)
 When correspondences are known between two point sets, the transformation matrix can be analytically calculated using the algorithm proposed in [[3]](#3). A brief summary of the algorithm is listed below. [This link](https://www.youtube.com/watch?v=dhzLQfDBx2Q) provides a video tutorial explaining this algorithm. Fig 2. is a graphical demonstration of the algorithm.
 
-Assume there are two sets of points $\tilde{P}$={ $P_1$, $P_2$ ..., $P_n$ } and $\tilde{Q}$={ $Q_1$, $Q_2$ ..., $Q_n$ }, where set $\tilde{Q}$ is set $\tilde{P}$ after being applied with a rigid transformation matrix $T_{12}$. To find $T_{12}$, the algorithm goes as follows:
+Assume there are two sets of points $\tilde{P}$={ $P_1$, $P_2$ ..., $P_n$ } and $\tilde{Q}$={ $Q_1$, $Q_2$ ..., $Q_n$ }, where set $\tilde{Q}$ is set $\tilde{P}$ after being applied with a rigid transformation matrix $\mathbf{T_{12}}$. To find $\mathbf{T_{12}}$, the algorithm goes as follows:
 
 ### Step 1. Find the central position for set $\tilde{P}$ and $\tilde{Q}$
-We denote the central positions $\overline{P}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} P_i$ and $\overline{Q}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} Q_i$, then we update the two point sets as $\tilde{P}$={ $P_1-\overline{P}$, $P_2-\overline{P}$ ..., $P_n-\overline{P}$ } and $\tilde{Q}$={ $Q_1-\overline{Q}$, $Q_2-\overline{Q}$ ..., $Q_n-\overline{Q}$ }. To facilitate further calculation, we use matrices to store these points. Matrix $A$ is used to represent the updated point set $\tilde{P}$, and matrix $B$ for the updated point set $\tilde{Q}$. Both $A$ and $B$ are n $\times$ 3 matrices, where each row stores the position of a 3D point.
+We denote the central positions $\overline{P}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} P_i$ and $\overline{Q}=\frac{1}{n} \displaystyle \sum_{i=1}^{n} Q_i$, then we update the two point sets as $\tilde{P}$={ $P_1-\overline{P}$, $P_2-\overline{P}$ ..., $P_n-\overline{P}$ } and $\tilde{Q}$={ $Q_1-\overline{Q}$, $Q_2-\overline{Q}$ ..., $Q_n-\overline{Q}$ }. To facilitate further calculation, we use matrices to store these points. Matrix $\mathbf{A}$ is used to represent the updated point set $\tilde{P}$, and matrix $\mathbf{B}$ for the updated point set $\tilde{Q}$. Both $\mathbf{A}$ and $\mathbf{B}$ are $\textrm{n} \times \textrm{3}$ matrices, where each row stores the position of a 3D point.
 
 ### Step 2. Implement SVD on the convariance matrix
-We construct the covariance matrix $H=A'B$. Then we perform SVD on $H$, and hence $H=USV'$. 
+We construct the covariance matrix $\mathbf{H=A'B}$. Then we perform SVD on $\mathbf{H}$, and hence $\mathbf{H=USV'}$. 
 
-### Step 3. Reconstruct $T_{12}$
-The rotational component of $T_{12}$ can be found as $R=VU'$, and the translational component of $T_{12}$ can be found as $t=-R \overline{P} + \overline{Q}$
+### Step 3. Reconstruct $\mathbf{T_{12}}$
+The rotational component of $\mathbf{T_{12}}$ can be found as $\mathbf{R=VU'}$, and the translational component of $\mathbf{T_{12}}$ can be found as $t=- \mathbf{R} \overline{P} + \overline{Q}$
 
 <p align="center" width="100%">
     <img width="50%" src=../Pics_for_demo/Algorithm.jpg> <br>
@@ -31,8 +31,8 @@ The rotational component of $T_{12}$ can be found as $R=VU'$, and the translatio
 
 
 ## Robot forward kinematics
-In robotics, we describe the status of a robot in either the joint space or Cartesian space. The joint space describes robot pose relative to joint coordinate frames, while the Cartesian space describes robot pose relative to the base frame of the robot *O<sub>0</sub>*. Different combinations of joint positions result in different poses of a robot, and this relationship is described by forward kinematics. Forward kinematics depends on both the joint status and the mechanical parameters of a robot, which are called Denavit-Hartenberg (DH) parameters. The selection DH parameters depends on how joint coordinate frames are established and hence is not unique to a robot. The selection of DH parameters can be referred to [[4]](#4). From DH parameters, we can construct a $4\times4$ matrix **T<sub>i,i+1</sub>** to describe the transformation between two adjacent joint coordinate frames *O<sub>i</sub>* and *O<sub>i+1</sub>*. Therefore, with knowledge of the forward kinematics and the position of point *P<sub>j</sub>* in joint *j* coordinate frame, we can recover its position in the robot base frame *P<sub>0</sub>* as
-$$P_0 = \prod_{k=0}^{j-1}T_{k,k+1}P_j$$
+In robotics, we describe the status of a robot in either the joint space or Cartesian space. The joint space describes robot pose relative to joint coordinate frames, while the Cartesian space describes robot pose relative to the base frame of the robot $\mathrm{O_0}$. Different combinations of joint positions result in different poses of a robot, and this relationship is described by forward kinematics. Forward kinematics depends on both the joint status and the mechanical parameters of a robot, which are called Denavit-Hartenberg (DH) parameters. The selection DH parameters depends on how joint coordinate frames are established and hence is not unique to a robot. The selection of DH parameters can be referred to [[4]](#4). From DH parameters, we can construct a $\textrm{4} \times \textrm{4}$ matrix $\mathbf{T_{i,i+1}}$ to describe the transformation between two adjacent joint coordinate frames $\mathrm{O_i}$ and $\mathrm{O_{i+1}}$. Therefore, with knowledge of the forward kinematics and the position of point $P_j$ in joint $\textrm{j}$ coordinate frame, we can recover its position in the robot base frame $P_0$ as
+$$P_0 = \prod_{k=0}^{j-1} \mathbf{T_{k,k+1}} P_j$$
 
 ## Experimental setup
 
@@ -64,17 +64,18 @@ The DH parameter table is listed below:
     
 | **Joint frame** | **$a$** | **$\alpha$** | **$d$** | **$\theta$** |
 | -------------   | ------------- | ------------- | ------------- |------------- |
-| 1 | 0 | $\frac{\pi}{2}$ | 0 | $q_1$ + $\frac{\pi}{2}$ | 
-| 2 | 0 | $\frac{\pi}{2}$ | 0 | $q_2$ - $\frac{\pi}{2}$ |
-| 3 | 0 | $\frac{\pi}{2}$ | $q_3-L_1$ | 0 |
-| 4 | 0 | 0 | $L_2$ | $q_4$ |
+| 1 | $\textrm{0}$ | $\frac{\pi}{2}$ | $\textrm{0}$ | $\textrm{q}_\textrm{1}$ + $\frac{\pi}{2}$ | 
+| 2 | $\textrm{0}$ | $\frac{\pi}{2}$ | $\textrm{0}$ | $\textrm{q}_\textrm{2}$ - $\frac{\pi}{2}$ |
+| 3 | $\textrm{0}$ | $\frac{\pi}{2}$ | $q_3-L_1$ | $\textrm{0}$ |
+| 4 | $\textrm{0}$ | $\textrm{0}$ | $\textrm{L}_\textrm{2}$ | $\textrm{q}_\textrm{4}$ |
 | ... | ... | ... | ... | ... |
 
 where $q_{1,2,3,4}$ are robot joint positions, and $L_1, L_2$ are constant mechanical parameters. We omitted forward kinematics chain beyond the 4<sup>th</sup> joint because we only the position of joint 4 for point set registration. The transformation matrix from the base frame to joint 4 frame is 
 
-$$T_{04}=T_{01}T_{12}T_{23}T_{34}$$
+$$\mathbf{T_{04}=T_{01}T_{12}T_{23}T_{34}}$$
 
 And joint 4 position ($j_{4x},j_{4y},j_{4z}$) in the base frame is 
+
 $$j_{4x}=L_2*sin(q_1)*cos(q_2) - (L_1-q_3)*sin(q_1)*cos(q_2)$$
 
 $$j_{4y}=-L_2*sin(q_2) + (L_1 - q_3)*sin(q_2)$$
@@ -91,10 +92,10 @@ The Acusense camera (Revopoint) is a stereo infrared camera that streams both co
 </p>
 
 #### a) RGB lens
-Colour frames are captured by the RGB lens, with a resolution of 600 $\times$ 800 pixels. Its intrinsic matrix is denoted as K_rgb.
+Colour frames are captured by the RGB lens, with a resolution of $\textrm{600} \times \textrm{800}$ pixels. Its intrinsic matrix is denoted as K_rgb.
 
 #### b) Depth lens
-Depth frames are captured by the Depth lens, with a resolution of 400 $\times$ 640 pixels, Its intrinsic matrix is denoted as K_depth.
+Depth frames are captured by the Depth lens, with a resolution of $\textrm{400} \times \textrm{640}$ pixels, Its intrinsic matrix is denoted as K_depth.
 
 ### 3. Bespoke markers<br />
 Two 3D printed red balls with different radii that could be fitted through the shaft of da Vinci instruments. These marker balls are shown in Fig 6.
