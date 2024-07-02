@@ -47,7 +47,7 @@ The first-generation dVRKs are repurposed out of retired first-generation da Vin
     Fig 3. The first generation da Vinci Research Kit (dVRK) <br>
 </p>
 
-Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below (Fig 4, cited from [[5]](#5)).
+Although different surgeries require using different surgical instruments, their DH parameters are the same. The definition of joint coordinate frames is shown below (Fig 4, reproduced from [[5]](#5)).
 
 <p align="center" width="100%">
     <img width="50%" src=../Pics_for_demo/JointFrame.png> <br>
