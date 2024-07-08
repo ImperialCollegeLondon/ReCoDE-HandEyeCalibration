@@ -50,7 +50,7 @@ Then we feed camera parameters into this object
     DepthCamera.ReadAcusenseDepth2RGBMat(Extrinsic_matrix);
 ```
 
-When reading image frames. we simply call back the built-in OpenCV function `cv::imread`, and when we read point cloud input, we use the class function `FeatureDetection::ReadPointCloudPCD`.
+When reading image frames, we simply call the built-in OpenCV function `cv::imread`, and when we read point cloud input, we use the class function `FeatureDetection::ReadPointCloudPCD`.
 
 ### 4. Kinematics data
 Kinematics data in this project only contains recorded joint angle positions when the instrument was being moved to different positions. These recorded positions are stored in an Eigen matrix, and hence to read these inputs we still call back the function `ReadMatrixFromTxt`.
