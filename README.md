@@ -7,6 +7,7 @@
 ## Description
 
 Hand-eye calibration is a well-studied topic in the field of robotics. Applications that involve the use cameras typically require conducting hand-eye calibration beforehand. This project presents a pipeline for conducting hand-eye calibration using a bespoke marker for a medical robot (the first generation da Vinci research kit). The experimental setup is shown in Fig 1.
+
 | ![Setup](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/Pics_for_demo/Setup.jpg?raw=true) |
 |:--:|
 | Fig 1. Experimental setup |
