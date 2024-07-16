@@ -10,6 +10,7 @@ The `src` directory comprises one `main.cc` and two other *.cc files which conta
 ## Dependencies
 Eigen library, OpenCV, and Point Cloud library are used in this project.
 
+
 ## Workflow
 The workflow of `main.cc` is shown in Fig 1, which consists of four steps. Descriptions for each step and their code implementations are presented below.
 
@@ -49,6 +50,7 @@ Then we feed camera parameters into this object
     DepthCamera.ReadIntrinsicMatrix(Intrinsic_matrix);
     DepthCamera.ReadAcusenseDepth2RGBMat(Extrinsic_matrix);
 ```
+
 
 When reading image frames, we simply call the built-in OpenCV function `cv::imread`, and when we read point cloud input, we use the class function `FeatureDetection::ReadPointCloudPCD`.
 
