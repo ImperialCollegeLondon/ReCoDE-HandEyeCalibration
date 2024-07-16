@@ -14,7 +14,7 @@ Hand-eye calibration is a well-studied topic in the field of robotics. Applicati
 
 The method presented in this project aims to conduct registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. Hand-eye calibration results can be visualised through 2D back projections. Fig 2 and Fig 3 display the back projection of a surgical tool shaft after accurate and inaccurate hand-eye calibrations, respectively. 
 
-| ![AfterCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/AccurateCalib.gif "AfterCalib") | ![BeforeCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/InaccurateCalib.gif "BeforeCalib") |
+| ![AfterCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/AccurateCalib.gif?raw=true "AfterCalib") | ![BeforeCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/InaccurateCalib.gif?raw=true "BeforeCalib") |
 |:--:|:--:|
 | Fig 2. Overlay with accurate calibration | Fig 3. Overlay without inaccurate calibration |
 
