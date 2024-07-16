@@ -47,7 +47,7 @@ If there is an existing exemplar in the ReCoDE repositories link to that.
 
 ### Academic
 - Basic knowledge on robotics (eg. Denavit–Hartenberg (DH) parameters, forward kinematics)
-- Hand-eye calibration and fundamental knowledge on computer vision (eg. camera intrinsic matrix, extrinsic matrix, image projection)
+- Hand-eye calibration and fundamental knowledge on computer vision (eg. camera intrinsic matrix, extrinsic matrix, projection geometry)
 - Linear algebra (eg. Singular Value Decomposition (SVD))
 Detailed information can be referred to `docs/Background.md`
 <!-- List the system requirements and how to obtain them, that can be as simple
