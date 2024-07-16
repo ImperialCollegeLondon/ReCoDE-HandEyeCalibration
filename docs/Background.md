@@ -10,7 +10,7 @@ Hand-eye calibration is a well-studied research topic in the field of robotics. 
 </p>
  -->
 
-| ![Hand-eye](../Pics_for_demo/HandEye.jpg "Hand-eye calibration")|
+| ![Hand-eye](Pics_for_demo/HandEye.jpg "Hand-eye calibration")|
 |:--:|
 | Fig 1. Hand-eye calibration |
 
