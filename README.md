@@ -8,13 +8,13 @@
 
 Hand-eye calibration is a well-studied topic in the field of robotics. Applications that involve the use cameras typically require conducting hand-eye calibration beforehand. This project presents a pipeline for conducting hand-eye calibration using a bespoke marker for a medical robot (the first generation da Vinci research kit). The experimental setup is shown in Fig 1.
 
-| ![Setup](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/Pics_for_demo/Setup.jpg?raw=true) |
+| ![Setup](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/Setup.jpg?raw=true) |
 |:--:|
 | Fig 1. Experimental setup |
 
 The method presented in this project aims to conduct registration between two sets of point cloud using singular value decomposition (SVD). This project aims to instruct students to understand basic knowledge of hand-eye calibration and grasp essential skills in using computer vision libraries such as OpenCV and Point Cloud library in C++. Hand-eye calibration results can be visualised through 2D back projections. Fig 2 and Fig 3 display the back projection of a surgical tool shaft after accurate and inaccurate hand-eye calibrations, respectively. 
 
-| ![AfterCalib](/Pics_for_demo/AccurateCalib.gif "AfterCalib") | ![BeforeCalib](/Pics_for_demo/InaccurateCalib.gif "BeforeCalib") |
+| ![AfterCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/AccurateCalib.gif "AfterCalib") | ![BeforeCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/InaccurateCalib.gif "BeforeCalib") |
 |:--:|:--:|
 | Fig 2. Overlay with accurate calibration | Fig 3. Overlay without inaccurate calibration |
 
