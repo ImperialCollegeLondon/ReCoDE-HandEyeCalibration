@@ -20,10 +20,10 @@ It stores the Intrinsic parameters of the colour lens of the Acusense camera.<br
 -`input/ExtrinsicMat.txt`
 It stores the Extrinsic parameters that consists the transformation matrix between the depth and colour lens of the Acusense camera.<br />
 -`input/IR/`
-It contains the infrared frames of the scene captured by the camera as the robot was moved to different poses.<br />
+It contains the infrared frames of the scene captured by the camera as the robot was being moved to different poses.<br />
 -`input/RGB/`
-It contains the colour frames of the scene captured by the camera as the robot was moved to different poses.<br />
+It contains the colour frames of the scene captured by the camera as the robot was being moved to different poses.<br />
 -`input/pcd/`
-It contains the point cloud captured by the camera as the robot was moved to different poses.
+It contains the point cloud captured by the camera as the robot was being moved to different poses.
 <!-- Add more files in the `docs/` directory for them to be automatically
 included in the Mkdocs documentation -->
