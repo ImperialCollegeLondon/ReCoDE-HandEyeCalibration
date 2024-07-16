@@ -37,7 +37,7 @@ The rotational component of $\mathbf{T_{12}}$ can be found as $\mathbf{R=VU'}$, 
 </p>
 --->
 
-| ![Algorithm](../Pics_for_demo/Algorithm.jpg "Algorithm")|
+| ![Algorithm](Pics_for_demo/Algorithm.jpg "Algorithm")|
 |:--:|
 | Fig 2. Algorithm for finding the hand-eye transformation matrix |
 
@@ -61,7 +61,7 @@ The first-generation dVRKs are repurposed out of retired first-generation da Vin
 </p>
 --->
 
-| ![dVRK](../Pics_for_demo/dvrk.jpeg "dvrk")|
+| ![dVRK](Pics_for_demo/dvrk.jpeg "dvrk")|
 |:--:|
 | Fig 3. The first generation da Vinci Research Kit (dVRK) |
 
@@ -74,7 +74,7 @@ Although different surgeries require using different surgical instruments, their
 </p>
 --->
 
-| ![JointFrame](../Pics_for_demo/JointFrame.png "JointFrame")|
+| ![JointFrame](Pics_for_demo/JointFrame.png "JointFrame")|
 |:--:|
 | Fig 4. Definition of PSM joint frames |
 
@@ -118,7 +118,7 @@ The Acusense camera (Revopoint Inc.) is a stereo infrared camera that streams bo
 </p>
 --->
 
-| ![Acusense](../Pics_for_demo/Acusense_annotated.jpg "Acusense")|
+| ![Acusense](Pics_for_demo/Acusense_annotated.jpg "Acusense")|
 |:--:|
 | Fig 5. Acusense camera |
 
@@ -138,7 +138,7 @@ Two 3D printed red balls with different radii that could be fitted through the s
 </p>
 --->
 
-| ![Marker](../Pics_for_demo/marker_Forceps_annotated.jpg "Marker")|
+| ![Marker](Pics_for_demo/marker_Forceps_annotated.jpg "Marker")|
 |:--:|
 | Fig 6. Marker balls and the forceps instrument |
 
