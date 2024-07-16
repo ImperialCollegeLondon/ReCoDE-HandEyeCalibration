@@ -32,7 +32,7 @@ Provide your best estimate -->
 | Task       | Time    |
 | ---------- | ------- |
 | Reading    | 3 hours |
-| Practising | 3 hours |
+| Practising | 2 hours |
 
 ## Requirements
 
@@ -125,10 +125,17 @@ in a tree node.
 │   └── utils.hpp
 ├── CMakeLists.txt 
 ├── docs
-├── notebooks
+│   ├── Background.md
+│   ├── Code_Overview.md
+│   ├── EigenLibraryIntro.md
+│   ├── FeatureDetection.md
+│   ├── OpenCVLibrary.md
+│   ├── PointClourLibraryIntro.md
+│   └── input.hpp
 ├── README.md
 ├── LICENSE.md
 ├── mkdocs.yml
+├── doxide.yaml
 └── requirements.txt 
 ```
 
