@@ -31,3 +31,4 @@ For a given recorded `.pcd` file, we use the built-in function `pcl::io::loadPCD
     {
         PCL_ERROR ("Couldn't read file test_pcd.pcd \n");
     }
+```
