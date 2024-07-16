@@ -52,7 +52,7 @@ $$P_0 = \prod_{k=0}^{j-1} \mathbf{T_{k,k+1}} P_j$$
 
 #### a) Overview
 
-The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre, and redistrubuted institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery. A full da Vinci system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) (Fig 3). It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon.
+The first-generation dVRKs are repurposed out of retired first-generation da Vinci robots (Intuitive Surgical Inc, Sunnyvale, California) that are no longer used in the clinical theatre. These robots were redistrubuted to institutions for research and trainings. The da Vinci robot is a tele-operative surgical platform for minimally invasive surgery, and a full system consists of one Surgeon Side Manipulator (SSM), one Endoscopic Camera Manipulator (ECM), and three Patient Side Manipulators (PSM) (Fig 3). It enables surgeons to operate on the SSM side whilst the surgical instruments mounted on the PSMs are replicating the hand movements of the surgeon.
 
 <!---
 <p align="center" width="100%">
@@ -109,7 +109,7 @@ $$ \textrm{j} _ \textrm{4z} = -\textrm{L}_2 * \textrm{cos}( \textrm{q}_1) * \tex
 
 ### 2. Acusense camera
 
-The Acusense camera (Revopoint) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. The camera is shown in Fig 5.
+The Acusense camera (Revopoint Inc.) is a stereo infrared camera that streams both colour images and depth images. The colour images provide information on the current scene, and the depth images provide information on the 3D positions of objects captured in the camera frames. The camera is shown in Fig 5.
 
 <!---
 <p align="center" width="100%">
