@@ -37,7 +37,7 @@ The extrinsic matrix that transforms the depth frame to the colour frame of the 
 
 This function reads input image and detect circular contours, the size of which is larger than `min_area`. Output `contour_img_list` is a vector of images overlaid with detected  circular contours, in the descending order of contour areas. 
 
-| ![Init_IR](../Pics_for_demo/Init_IR_frame.png "Init_IR") | ![Init_depth](../Pics_for_demo/Init_depth_frame.png "Init_depth") |
+| ![Init_IR](Pics_for_demo/Init_IR_frame.png "Init_IR") | ![Init_depth](Pics_for_demo/Init_depth_frame.png "Init_depth") |
 |:--:|:--:|
 | Fig 1. Init_IR photo | Fig 2. Init_depth photo |
 
@@ -66,7 +66,7 @@ Then we rearrange the detected contours in an descending order
     }
 ```
 
-| ![Contour_0](../Pics_for_demo/find_contours0.png "Contour_0") | ![Contour_1](../Pics_for_demo/find_contours1.png "Contour_1") |
+| ![Contour_0](Pics_for_demo/find_contours0.png "Contour_0") | ![Contour_1](Pics_for_demo/find_contours1.png "Contour_1") |
 |:--:|:--:|
 | Fig 3. Contour 0 detected | Fig 4. Contour 1 detected |
 
