@@ -14,7 +14,7 @@ Eigen library, OpenCV, and Point Cloud library are used in this project.
 ## Workflow
 The workflow of `main.cc` is shown in Fig 1, which consists of four steps. Descriptions for each step and their code implementations are presented below.
 
-| ![workflow](../Pics_for_demo/Flowchart.jpg "workflow") |
+| ![workflow](Pics_for_demo/Flowchart.jpg "workflow") |
 |:--:|
 | Fig 1. Workflow |
 
