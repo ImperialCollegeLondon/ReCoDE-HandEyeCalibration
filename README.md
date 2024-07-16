@@ -16,7 +16,7 @@ The method presented in this project aims to conduct registration between two se
 
 | ![AfterCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/AccurateCalib.gif?raw=true "AfterCalib") | ![BeforeCalib](https://github.com/ImperialCollegeLondon/ReCoDE-HandEyeCalibration/blob/main/docs/Pics_for_demo/InaccurateCalib.gif?raw=true "BeforeCalib") |
 |:--:|:--:|
-| Fig 2. Overlay with accurate calibration | Fig 3. Overlay without inaccurate calibration |
+| Fig 2. Overlay with accurate calibration | Fig 3. Overlay with inaccurate calibration |
 
 <!-- What should the students going through your exemplar learn -->
 
