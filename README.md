@@ -131,7 +131,7 @@ in a tree node.
 │   ├── FeatureDetection.md
 │   ├── OpenCVLibrary.md
 │   ├── PointClourLibraryIntro.md
-│   └── input.hpp
+│   └── input.md
 ├── README.md
 ├── LICENSE.md
 ├── mkdocs.yml
