@@ -17,7 +17,7 @@ jobs:
       
       # Install and run doxide
       - name: Add indii.org repository
-        run: echo 'deb http://download.indii.org/deb focal main' | sudo tee /etc/apt/sources.list.d/indii.org.list
+        run: echo 'deb https://download.indii.org/deb resolute main' | sudo tee /etc/apt/sources.list.d/indii.org.list
       - name: Add indii.org GPG key
         run: |
           curl -fsSL https://download.indii.org/deb/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/indii.org.gpg > /dev/null
